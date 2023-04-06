@@ -15,7 +15,7 @@ function HomePage() {
             <h1 className="hero-heading">GreenJourney</h1>
             <p className="hero-text">Our website is dedicated to providing you with practical advice on energy conservation and emission reduction, the latest developments in environmental technology and information related to green lifestyles.</p>
             <p className="hero-text">Join us and let us care about the health of the earth and leave a better and greener home for future generations. Because every small change will become a powerful force, and together push us towards a sustainable future.</p>
-            <button className={styles.button} onClick={() => window.location.href = '/information'}>
+            <button className={styles.button} onClick={() => window.location.href = '/information/city'}>
               View
             </button>
         </section>
