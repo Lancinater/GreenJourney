@@ -25,7 +25,7 @@ function HomePage() {
     <div>
       <header className="hero-box">
         <section className="hero-image-box">
-          <video className="hero-video" src={homeVideo} autoPlay muted loop></video>
+          <video className="hero-video" src={homeVideo} autoPlay muted loop playsInline></video>
         </section>
         <section className="hero-text-box">
           <h1 className="hero-heading">GreenJourney</h1>
