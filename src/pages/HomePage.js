@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './HomePage.css';
 import homeVideo from '../videos/homeVideoEdited.mp4';
 
-
 function HomePage() {
   const [scrollToTop, setScrollToTop] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  }, []);
+
   const scrollToBottom = () => {
     if (scrollToTop) {
       window.scrollTo({
@@ -19,13 +26,12 @@ function HomePage() {
     }
     setScrollToTop(!scrollToTop);
   };
-  
 
   return (
     <div>
       <header className="hero-box">
         <section className="hero-image-box">
-          <video className="hero-video" src={homeVideo} autoPlay muted loop playsInline></video>
+          <video ref={videoRef} className="hero-video" src={homeVideo} muted loop playsInline></video>
         </section>
         <section className="hero-text-box">
           <h1 className="hero-heading">GreenJourney</h1>
@@ -41,7 +47,7 @@ function HomePage() {
             View
           </button> */}
           <div className="arrows" onClick={scrollToBottom}>
-          <i className={`fas ${scrollToTop ? 'fa-chevron-up' : 'fa-chevron-down'} icon`}></i>
+            <i className={`fas ${scrollToTop ? 'fa-chevron-up' : 'fa-chevron-down'} icon`}></i>
           </div>
         </section>
       </header>      
