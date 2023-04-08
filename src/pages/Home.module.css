@@ -82,3 +82,27 @@
     background-position: center center;
     height: 100vh;
   }
+
+.arrows {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  position: fixed;   
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+  
+  .icon {
+    font-size: 4rem; 
+    color: rgb(239, 246, 241); 
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+  }
+  
+  .arrows:hover .icon {
+    transform: translateY(10px); /* 根据放大的尺寸调整位移 */
+  }

@@ -12,13 +12,13 @@ function NavigationBar() {
 
   return (
     <nav>
-      <img src={icon}/>
+      {/* <img src={icon}/> */}
       <ul>
         <li>
           <a href="/">Home</a>
         </li>
         <li>
-          <a href="/footprint">Trace</a>
+          <a href="/footprint">Footprint</a>
         </li>
 
 
@@ -31,10 +31,11 @@ function NavigationBar() {
         {/* <li>
           <a href="/travel">Travel</a>
         </li>   */}
+
         <li className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
           <a>Information</a>
           <ul className={isDropdownVisible ? "visible" : "hidden"}>
-            <li><a href="/information/city">State Information</a></li>
+            <li><a href="/information/state">State Information</a></li>
             <li><a href="/information/transport">Transport Information</a></li>
           </ul>
         </li>
