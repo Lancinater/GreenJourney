@@ -1,6 +1,5 @@
 import './App.css';
 import NavigationBar from './navigationBar/NavigationBar';
-import DemoAPI from './demoAPI/DemoAPI';
 import React, {useState} from 'react'
 import axios from 'axios'
 import CarbonCalculator from './carbonCalculator/CarbonCalculator';
@@ -40,7 +39,8 @@ function App() {
            <div className="background">
              <h1>Travel By Car</h1>
              <CarbonCalculator></CarbonCalculator>
-           </div>                                   
+           </div> 
+           <CarbonEstimator></CarbonEstimator>                                  
           </div>         
         </Route>
 
@@ -54,15 +54,13 @@ function App() {
 
         <Route path="/information/state">
           <div> 
-            <Chart></Chart>
-            <Quiz></Quiz>
-          </div>
-        
+            <Chart></Chart>            
+          </div>        
         </Route>
 
         <Route path="/information/transport">
         <div> 
-          <CarbonEstimator></CarbonEstimator>
+          
           <TransportPage></TransportPage>
           </div>
         </Route>

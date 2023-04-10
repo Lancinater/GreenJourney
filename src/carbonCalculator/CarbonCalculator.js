@@ -47,7 +47,12 @@ function CarbonCalculator() {
   }
 
   function handleDistanceChange(event) {
-    setDistance(event.target.value);
+    const inputValue = event.target.value;
+    if (inputValue < 0) {
+      setDistance(0);
+    } else {
+      setDistance(inputValue);
+    }
   }
 
   function getSuggestion(carbonTotal) {
@@ -57,9 +62,17 @@ function CarbonCalculator() {
     return "";
   }
 
+  
+
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (distance === "0") {
+      setResult("Distance cannot be 0.");
+      setSuggestion("");
+      return;
+    }
+    
     const carModel = CAR_BRANDS.find(b => b.name === brand)?.models.find(m => m.name === model); // find the model
     if (carModel && distance) {
       const carbonEmission = carModel.emission;
@@ -105,7 +118,7 @@ function CarbonCalculator() {
         {model && (
           <label className={styles.label} >
             Distance driven (km):
-            <input type="number" value={distance} onChange={handleDistanceChange} className={styles.select} />
+            <input type="number" value={distance} onChange={handleDistanceChange} className={styles.select} min="0" />
           </label>
         )}
         <div className={styles['button-container']}>

@@ -9,6 +9,7 @@ const CarbonEstimator = () => {
   });
 
   const [resultsList, setResultsList] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const typeValues = {
     car: 1,
@@ -20,11 +21,26 @@ const CarbonEstimator = () => {
   };
 
   const handleChange = (e) => {
+    if (e.target.name === "distance") {
+      const inputValue = e.target.value;
+      if (inputValue < 0) {
+        setErrorMessage("Distance cannot be a negative number.");
+      } else if (inputValue === 0) {
+        setErrorMessage("Distance cannot be 0.");
+      } else {
+        setErrorMessage("");
+      }
+    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (formData.distance === "0") {
+      setErrorMessage("Distance cannot be 0.");
+      return;
+    }
 
     const calculatedResult = formData.distance * typeValues[formData.type];
     setResultsList([...resultsList, calculatedResult]);
@@ -56,8 +72,11 @@ const CarbonEstimator = () => {
           name="distance"
           value={formData.distance}
           onChange={handleChange}
+          min="0"
           required
         />
+           {errorMessage && (
+             <p className="error-message">{errorMessage}</p>)}
         <br />
         <button type="submit">Calculate</button>
       </form>

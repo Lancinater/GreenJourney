@@ -24,9 +24,9 @@ function NavigationBar() {
 
 
 
-        {/* <li>
+        <li>
           <a href="/quiz">Quiz</a>
-        </li>  */}
+        </li> 
 
         {/* <li>
           <a href="/travel">Travel</a>
