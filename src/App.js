@@ -24,11 +24,12 @@ function App() {
   return (
     <Router>
       <NavigationBar />
+      
       <Switch>
         <Route exact path="/">
              <HomePage></HomePage>
              <NewsPage></NewsPage>
-             
+             <Footer></Footer>
         </Route>
 
         <Route path="/footprint">
@@ -45,12 +46,15 @@ function App() {
              <CarbonCalculator></CarbonCalculator>
            </div> 
            <CarbonEstimator></CarbonEstimator>                                  
-          </div>         
+          </div> 
+                  
         </Route>
 
         <Route path="/quiz">
           <Quiz></Quiz>
+          
         </Route>
+        
         
         <Route path="/travel">
         <Weather></Weather> 
@@ -75,9 +79,9 @@ function App() {
             
           </div>
         </Route>
-      </Switch>
-      <Footer />
+      </Switch>  
     </Router>
+    
   );
 }
 

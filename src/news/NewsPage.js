@@ -9,27 +9,25 @@ function NewsPage() {
 
   return (
     <div className="NewsPage">
-        <h1>Recent news about carbon emission</h1>
+        <h1>On our website, you can do the following things:</h1>
         <div className="NewsList">
                 <News
-                    img = {img1}
-                    title="Australia: Extreme Heat Threatens Lives"
-                    link="https://www.hrw.org/news/2022/03/21/australia-extreme-heat-threatens-lives"
+                    img = {img1 }
+                    title="Track the Footprint of your Carbon emission!"
+                    link="https://www.sustainrecycle.link/footprint"
                 />
                 <News
                     img = {img2}
-                    title="Australia faces more fires, drought as climate continues to heat"
-                    link="https://www.aljazeera.com/news/2020/11/13/australia-faces-more-fires-drought-as-climate-continues-to-heat"
+                    title="Carbon emissions in different states of Australia!"
+                    link="https://www.sustainrecycle.link/information/state"
                 />
                 <News
                     img = {img3}
-                    title="Australia’s emissions climbed in Coalition’s final year as transport and fossil fuels wiped out gains during Covid"
-                    link="https://www.theguardian.com/environment/2022/jun/27/australias-emissions-climbed-in-coalitions-final-year-as-transport-and-fossil-fuels-wiped-out-gains-during-covid#:~:text=Transport%20emissions%20were%20up%2010,not%20back%20at%202019%20levels."
+                    title="Carbon emissions by different means of transport!"
+                    link="http://localhost:3000/information/transport"
                 />
         </div>
     </div>
-
-
   );
 }
 
