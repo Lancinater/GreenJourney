@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './HomePage.css';
 import homeVideo from '../videos/homeVideoEdited.mp4';
+import NavigationBar from '../navigationBar/NavigationBar';
+
 
 function HomePage() {
   const [scrollToTop, setScrollToTop] = useState(false);
@@ -29,7 +31,9 @@ function HomePage() {
 
   return (
     <div>
+     
       <header className="hero-box">
+          
         <section className="hero-image-box">
           <video ref={videoRef} className="hero-video" src={homeVideo} muted loop playsInline></video>
         </section>

@@ -81,7 +81,7 @@
     justify-content: center;
     margin-top: 1rem;
     position: fixed; /* 将 position 改为 fixed */
-    bottom: 1rem; /* 根据需要调整底部位置 */
+    bottom: 4rem; /* 根据需要调整底部位置 */
     left: 50%;
     transform: translateX(-50%);
   }

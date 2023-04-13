@@ -15,6 +15,10 @@ import TrafficMap from './pages/TrafficMap';
 import CarbonEstimator from './emission/CarbonEstimator';
 import TransportPage from './TransportChart/TransportPage';
 import Guide from './pages/Guide';
+import Footer from './footer/Footer';
+
+
+
 
 function App() {
   return (
@@ -68,9 +72,11 @@ function App() {
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
             <Guide></Guide>
+            
           </div>
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
