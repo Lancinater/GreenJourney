@@ -13,6 +13,7 @@ function NavigationBar() {
   return (
     <nav>
       {/* <img src={icon}/> */}
+      <h1>Green Journey</h1>
       <ul>
         <li>
           <a href="/">Home</a>

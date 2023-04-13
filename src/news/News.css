@@ -6,7 +6,8 @@
     flex-direction: column;
     padding: 13px;
     padding-bottom: 20px;
-    background-color: white;
+    background:linear-gradient(rgba(238,238,238),transparent);
+    background-color:white;
 }
 
 .News > img{
