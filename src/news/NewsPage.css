@@ -1,8 +1,8 @@
 .NewsList{
     display: flex;
     justify-content: center;
-    gap: 200px;
-    padding: 100px;
+    gap: 100px;
+    padding: 10px;
 }
 
 .NewsPage{
@@ -15,7 +15,7 @@
 
 .NewsPage > h1{
     text-align: center;
-    padding-top: 150px;
+    padding: 50px;
     color: black;
     font-size: 30px;
 }
@@ -24,5 +24,7 @@
     width: 300px; 
     height: 200px; 
     object-fit: cover; 
-  }
+}
+
+
   
