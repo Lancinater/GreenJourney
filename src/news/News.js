@@ -7,7 +7,7 @@ function News(props) {
     <div className="News">
         <img src ={props.img} alt="News about carbon emission"/>
         <h3>{props.title}</h3>
-        <a href={props.link} target="_blank" rel="noopener noreferrer">Explore ></a>
+        <a href={props.link} rel="noopener noreferrer">Explore ></a>
     </div>
 
   );

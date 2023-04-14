@@ -7,9 +7,9 @@
     <list default="true" id="615f17c8-a5a4-4987-84fc-00e3b35da3d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/navigationBar/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigationBar/NavigationBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigationBar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigationBar/NavigationBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/news/News.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/News.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/news/NewsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/NewsPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/NewsPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
