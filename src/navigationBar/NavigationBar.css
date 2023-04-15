@@ -72,3 +72,20 @@ ul.dropdown.visible {
 ul.dropdown.hidden {
   display: none;
 }
+
+.dropdown a {
+  color: white;
+}
+
+.dropdown:hover a {
+  color: white;
+}
+
+nav li.dropdown a {
+  color: white !important;
+}
+
+nav li.dropdown:hover a {
+  color: white !important;
+}
+

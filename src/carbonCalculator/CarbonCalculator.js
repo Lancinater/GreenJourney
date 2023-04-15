@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './CarbonCalculator.module.css';
 import audiImage from './audi.jpg';
 import arucaImage from './aruca.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
 const CAR_BRANDS = [
   {
@@ -122,7 +124,9 @@ function CarbonCalculator() {
           </label>
         )}
         <div className={styles['button-container']}>
-        <button type="submit" className={styles.button}>Calculate</button>
+        <Button type="submit" className={styles.button} variant="outline-success" size="lg">
+          Calculate
+        </Button>
         </div>
       </form>
       </div>

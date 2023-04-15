@@ -1,4 +1,5 @@
-// src/components/CarbonEstimator/CarbonEstimator.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import './CarbonEstimator.css';
 
@@ -78,11 +79,11 @@ const CarbonEstimator = () => {
            {errorMessage && (
              <p className="error-message">{errorMessage}</p>)}
         <br />
-        <button type="submit">Calculate</button>
+        <Button type="submit" variant="outline-success" size="lg" >Calculate</Button>
       </form>
       <div className="results-total">
         <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2>
-        <button onClick={handleReset}>Reset</button>
+        <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
     </div>
   );

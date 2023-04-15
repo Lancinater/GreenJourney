@@ -1,6 +1,6 @@
 
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import styles from './Quiz.module.css';
 
@@ -50,6 +50,7 @@ const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState(-1);
   const [showAnswer, setShowAnswer] = useState(false);
   const [numCorrectAnswers, setNumCorrectAnswers] = useState(0);
+  const [isAnswered, setIsAnswered] = useState(false);
 
   const handleOptionChange = (e) => {
     setSelectedOption(parseInt(e.target.value));
@@ -57,23 +58,28 @@ const Quiz = () => {
 
   const handleSubmit = () => {
     setShowAnswer(true);
-    if (selectedOption === questions[currentQuestion].correctAnswer) {
+    if (!isAnswered && selectedOption === questions[currentQuestion].correctAnswer) {
       setNumCorrectAnswers(numCorrectAnswers + 1);
     }
+    setIsAnswered(true);
   };
+  
 
   const handleNext = () => {
     setCurrentQuestion(currentQuestion + 1);
     setSelectedOption(-1);
     setShowAnswer(false);
+    setIsAnswered(false);
   };
-
+  
   const handleReset = () => {
     setCurrentQuestion(0);
     setSelectedOption(-1);
     setShowAnswer(false);
     setNumCorrectAnswers(0);
+    setIsAnswered(false);
   };
+  
 
   return (
     <div className={styles.quiz}>
@@ -95,9 +101,9 @@ const Quiz = () => {
         ))}
 
         <div className={styles['button-container']}>
-          <button type="button" onClick={handleSubmit} disabled={selectedOption === -1}>
+          <Button variant="outline-success" onClick={handleSubmit} disabled={selectedOption === -1}>
             Submit
-          </button>
+          </Button>
         </div>
       </form>
       {showAnswer && (
@@ -106,23 +112,27 @@ const Quiz = () => {
             <p>Correct! You are so Good! </p>
           ) : (
             <p>
-              Incorrect. The correct answer is:{' '}
+              Incorrect. The correct answer is: {' '}
               {questions[currentQuestion].options[questions[currentQuestion].correctAnswer]}
             </p>
           )}
           {currentQuestion < questions.length - 1 ? (
             <div className={styles['button-container']}>
-              <button onClick={handleNext}>Next Question</button>
+              <Button variant="outline-success" onClick={handleNext}>
+                Next Question
+              </Button>
             </div>
           ) : (
             <div>
               <p>You have completed the quiz.</p>
               <p>
-                Your overall accuracy is:{' '}
+                Your overall accuracy is: {' '}
                 {((numCorrectAnswers / questions.length) * 100).toFixed(2)}%
               </p>
               <div className={styles['button-container']}>
-                <button onClick={handleReset}>Reset Quiz</button>
+                <Button variant="outline-success" onClick={handleReset}>
+                  Reset Quiz
+                </Button>
               </div>
             </div>
           )}
