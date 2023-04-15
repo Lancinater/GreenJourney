@@ -5,7 +5,7 @@ import img2 from '../images/CarEmission.png';
 import img3 from '../images/EmissionComparison.png';
 import img4 from '../images/MapTraffic.png';
 import './NewsPage.css';
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+
 
 function NewsPage() {
 

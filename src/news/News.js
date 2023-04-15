@@ -4,13 +4,18 @@ import './News.css';
 function News(props) {
 
   return (
+
+  <div className="Features">
     <div className="News">
         <img src ={props.img} alt="News about carbon emission"/>
         <h3>{props.title}</h3>
-        <p>{props.description}</p>
-        <a href={props.link} rel="noopener noreferrer">Explore ></a>
-    </div>
 
+    </div>
+    <div className="NewsContent">
+        <p>{props.description}</p>
+        <button href={props.link} rel="noopener noreferrer">Explore ></button>
+    </div>
+  </div>
   );
 }
 

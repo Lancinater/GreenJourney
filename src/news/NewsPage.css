@@ -3,20 +3,22 @@
     justify-content: center;
     gap: 100px;
     padding: 10px;
+    flex-direction: column;
   }
   
   .NewsPage {
     background: linear-gradient(rgba(238, 238, 238), transparent);
     background-color: #E0F3FF;
     width: 100%;
-    height: 950px;
+    height: 100%;
   }
   
   .NewsPage > h1 {
     text-align: center;
     padding: 50px;
     color: black;
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
   }
   
   .news-image {
