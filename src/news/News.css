@@ -1,12 +1,13 @@
 .News{
-    flex-basis: 350px;
+    flex-basis: 400px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     padding: 13px;
-    padding-bottom: 20px;
-    background-color: white;
+    padding-bottom: 15px;
+    background:linear-gradient(rgba(238,238,238),transparent);
+    background-color:E0F3FF;
 }
 
 .News > img{
@@ -26,4 +27,8 @@
     font-weight: 700;
     font-size: 18px;
     padding-top: 20px;
+}
+
+.News > p{
+    font-size: 16px;
 }

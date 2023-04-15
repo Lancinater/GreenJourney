@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="615f17c8-a5a4-4987-84fc-00e3b35da3d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/News.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/News.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/News.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/NewsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/NewsPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/news/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/news/NewsPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/IdeaProjects/GreenJourney&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Study/ComputingBasics/Regex/Regex_Fundamentals_Java&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
