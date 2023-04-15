@@ -1,13 +1,13 @@
 import React from 'react';
 import './News.css';
-import Fade from 'react-reveal/Fade';
+//import Fade from 'react-reveal/Fade';
 
 function News(props) {
 
   return (
 
   <div className="Features">
-  <Fade right>
+
     <div className="News">
         <img src ={props.img} alt="News about carbon emission"/>
         <h3>{props.title}</h3>
@@ -17,7 +17,7 @@ function News(props) {
         <p>{props.description}</p>
         <button onClick={() => window.location.href = props.link}>Explore More</button>
     </div>
-    </Fade>
+
   </div>
   );
 }
