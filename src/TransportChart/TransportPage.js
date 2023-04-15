@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './TransportPage.css';
+import Alert from 'react-bootstrap/Alert';
 
 const typeValues = {
   large_car: 209.47,
@@ -65,6 +66,14 @@ const TransportPage = () => {
         <Legend />
         <Bar dataKey="emissions" fill="#8884d8" />
       </BarChart>
+
+      <Alert variant="success">
+      This feature is used to compare between two different types of transport on which of the transport produces more carbon emissions. 
+      </Alert>
+
+
+
+
     </div>
   );
 };

@@ -16,7 +16,7 @@ import CarbonEstimator from './emission/CarbonEstimator';
 import TransportPage from './TransportChart/TransportPage';
 import Guide from './pages/Guide';
 import Footer from './footer/Footer';
-
+import Description from './description/Description';
 
 
 
@@ -35,16 +35,15 @@ function App() {
         <Route path="/footprint">
           <div>
            <div className="App">
-             <h1>Melbourne Traffic</h1>
-             <h2 className= "font-size">current traffic conditions in Melbourne</h2>
+             <h1>Melbourne Traffic</h1>             
              <TrafficMap />
            </div>
            
 
-           <div className="background">
+           {/* <div className="backgroundtext">
              <h1>Travel By Car</h1>
              <CarbonCalculator></CarbonCalculator>
-           </div> 
+           </div>  */}
            <CarbonEstimator></CarbonEstimator>                                  
           </div> 
                   
@@ -62,7 +61,8 @@ function App() {
 
         <Route path="/information/state">
           <div> 
-            <Chart></Chart>            
+            <Chart></Chart>
+            <Description></Description>            
           </div>        
         </Route>
 

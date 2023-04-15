@@ -3,6 +3,10 @@
    
 }
 
+.App h1 {
+  font-weight: bold;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,9 +52,24 @@
   font-size: 2rem;
 }
 
+.backgroundtext{
+  text-align: center;
+  
+  
+}
+
+.backgroundtext h1 {
+  font-weight: bold;
+}
+
 .background{
   text-align: center;
   background-color: #c8dbe5;
+  
+}
+
+.background h1 {
+  font-weight: bold;
 }
 
 .font-size{

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import './CarbonEstimator.css';
+import Alert from 'react-bootstrap/Alert';
 
 const CarbonEstimator = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,12 @@ const CarbonEstimator = () => {
 
   return (
     <div className="carbon-estimator">
+        
       <h1>Carbon Estimator</h1>
+      <Alert variant="primary">
+        A carbon calculator is a tool that helps people calculate their carbon emissions from the way they live, work or travel, etc. 
+      </Alert>
+
       <form onSubmit={handleSubmit} className="form-container">
         <label htmlFor="type">Type:</label>
         <select className="select" name="type" id="type" value={formData.type} onChange={handleChange} required>
@@ -85,6 +91,9 @@ const CarbonEstimator = () => {
         <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2>
         <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
+      <Alert variant="primary">
+        It usually calculates and displays the corresponding carbon emissions based on the data provided by the user (such as energy usage, transportation mode, eating habits, etc.). These calculations can help people understand the size of their carbon footprint, and promote people to take action to reduce carbon emissions, in order to combat climate change and slow down the impact of global warming.
+      </Alert>
     </div>
   );
 };

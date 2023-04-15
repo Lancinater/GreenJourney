@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import styles from './Quiz.module.css';
+import Alert from 'react-bootstrap/Alert';
 
 const Quiz = () => {
   const questions = [
@@ -109,12 +110,12 @@ const Quiz = () => {
       {showAnswer && (
         <div>
           {selectedOption === questions[currentQuestion].correctAnswer ? (
-            <p>Correct! You are so Good! </p>
+            <Alert variant="primary" style={{textAlign: 'center'}}>Correct! You are so Good! </Alert>
           ) : (
-            <p>
+            <Alert variant="primary">
               Incorrect. The correct answer is: {' '}
               {questions[currentQuestion].options[questions[currentQuestion].correctAnswer]}
-            </p>
+            </Alert>
           )}
           {currentQuestion < questions.length - 1 ? (
             <div className={styles['button-container']}>
@@ -124,11 +125,11 @@ const Quiz = () => {
             </div>
           ) : (
             <div>
-              <p>You have completed the quiz.</p>
-              <p>
+              <Alert variant="primary" style={{textAlign: 'center'}}>You have completed the quiz.
+              
                 Your overall accuracy is: {' '}
                 {((numCorrectAnswers / questions.length) * 100).toFixed(2)}%
-              </p>
+              </Alert>
               <div className={styles['button-container']}>
                 <Button variant="outline-success" onClick={handleReset}>
                   Reset Quiz
