@@ -15,7 +15,7 @@ function News(props) {
     </div>
     <div className="NewsContent">
         <p>{props.description}</p>
-        <button onClick={() => window.location.href = props.link}>Explore ></button>
+        <button onClick={() => window.location.href = props.link}>Explore More</button>
     </div>
     </Fade>
   </div>
