@@ -17,7 +17,7 @@ function Weather() {
     }
   }
 
-  // 根据天气数据进行分析，给出出行建议
+  
   const getTravelRecommendation = () => {
     if (!data.weather) return null;
 

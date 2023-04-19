@@ -33,6 +33,10 @@ function NavigationBar() {
           <a href="/travel">Travel</a>
         </li>   */}
 
+         {/* <li>
+          <a href="/test">Test</a>
+        </li>  */}
+
         <li className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
           <a>Information</a>
           <ul className={isDropdownVisible ? "visible" : "hidden"}>

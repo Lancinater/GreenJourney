@@ -22,7 +22,7 @@ const center = {
 
 const apiKey = "AIzaSyC23ZF9voWG9vvdsTx1--xV-RI_ArHYjsA";
 
-const TrafficMap = () => {
+const TrafficMap = ({ onDistanceChange }) => {
   const [userLocation, setUserLocation] = useState(null);
   const [destination, setDestination] = useState("");
   const [distance, setDistance] = useState("");
@@ -51,6 +51,7 @@ const TrafficMap = () => {
         if (status === "OK") {
           const distanceResult = response.rows[0].elements[0].distance.text;
           setDistance(distanceResult);
+          onDistanceChange(distanceResult);
         } else {
           console.error("Error:", status);
         }

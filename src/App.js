@@ -17,7 +17,7 @@ import TransportPage from './TransportChart/TransportPage';
 import Guide from './pages/Guide';
 import Footer from './footer/Footer';
 import Description from './description/Description';
-
+import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
 
 
 function App() {
@@ -33,20 +33,10 @@ function App() {
         </Route>
 
         <Route path="/footprint">
-          <div>
-           <div className="App">
-             <h1>Melbourne Traffic</h1>             
-             <TrafficMap />
-           </div>
-           
-
-           {/* <div className="backgroundtext">
-             <h1>Travel By Car</h1>
-             <CarbonCalculator></CarbonCalculator>
-           </div>  */}
-           <CarbonEstimator></CarbonEstimator>                                  
-          </div> 
-                  
+        <div className="App">
+             <h1>Melbourne Traffic</h1>           
+             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
+          </div>                  
         </Route>
 
         <Route path="/quiz">
@@ -67,11 +57,17 @@ function App() {
         </Route>
 
         <Route path="/information/transport">
-        <div> 
-          
+        <div>           
           <TransportPage></TransportPage>
           </div>
         </Route>
+
+        {/* <Route path="/test">
+          <div className="App">
+             <h1>Melbourne Traffic</h1>           
+             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
+          </div>
+        </Route> */}
 
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
