@@ -1,4 +1,3 @@
-// TrafficMap.js
 import React, { useState, useEffect } from "react";
 import {
   GoogleMap,
@@ -26,6 +25,7 @@ const TrafficMap = ({ onDistanceChange }) => {
   const [userLocation, setUserLocation] = useState(null);
   const [destination, setDestination] = useState("");
   const [distance, setDistance] = useState("");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -40,6 +40,11 @@ const TrafficMap = ({ onDistanceChange }) => {
   }, []);
 
   const calculateDistance = (destination) => {
+    if (!destination) {
+      setError("Please enter a destination.");
+      return;
+    }
+
     const distanceMatrix = new window.google.maps.DistanceMatrixService();
     distanceMatrix.getDistanceMatrix(
       {
@@ -49,11 +54,18 @@ const TrafficMap = ({ onDistanceChange }) => {
       },
       (response, status) => {
         if (status === "OK") {
-          const distanceResult = response.rows[0].elements[0].distance.text;
-          setDistance(distanceResult);
-          onDistanceChange(distanceResult);
+          const elementStatus = response.rows[0].elements[0].status;
+          if (elementStatus === "NOT_FOUND" || elementStatus === "ZERO_RESULTS") {
+            setError("Invalid destination. Please try again.");
+          } else {
+            setError(null);
+            const distanceResult = response.rows[0].elements[0].distance.text;
+            setDistance(distanceResult);
+            onDistanceChange(distanceResult);
+          }
         } else {
           console.error("Error:", status);
+          setError("Failed to calculate distance. Please try again.");
         }
       }
     );
@@ -80,6 +92,7 @@ const TrafficMap = ({ onDistanceChange }) => {
       />
       <button onClick={handleCalculateClick}>Calculate Distance</button>
       {distance && <p>Distance: {distance}</p>}
+      {error && <p className="error-message">{error}</p>}
       <LoadScript googleMapsApiKey={apiKey}>
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
