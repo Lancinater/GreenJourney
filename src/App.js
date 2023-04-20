@@ -62,12 +62,11 @@ function App() {
           </div>
         </Route>
 
-        {/* <Route path="/test">
+        <Route path="//travel">
           <div className="App">
-             <h1>Melbourne Traffic</h1>           
-             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
+             <Weather></Weather>
           </div>
-        </Route> */}
+        </Route> 
 
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
