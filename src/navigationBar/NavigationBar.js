@@ -25,13 +25,13 @@ function NavigationBar() {
 
 
 
-        <li>
-          <a href="/quiz">Quiz</a>
-        </li> 
-
         {/* <li>
+          <a href="/quiz">Quiz</a>
+        </li>  */}
+
+        <li>
           <a href="/travel">Travel</a>
-        </li>   */}
+        </li> 
 
          {/* <li>
           <a href="/test">Test</a>

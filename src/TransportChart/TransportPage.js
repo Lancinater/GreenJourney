@@ -60,7 +60,7 @@ const TransportPage = () => {
       <br />
       <BarChart {...chartConfig}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" label={{ value: 'Transport Type', position: 'insideBottom' }} />
+        <XAxis dataKey="name" label={{ value: 'Type', position: 'insideBottom' }} />
         <YAxis label={{ value: 'Emission (gCO2e/km)', angle: -90, position: 'insideLeft' }} />
         <Tooltip />
         <Legend />

@@ -18,6 +18,10 @@ import Guide from './pages/Guide';
 import Footer from './footer/Footer';
 import Description from './description/Description';
 import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
+import './layout.css';
+import Weather2 from './recommendationweather/Weather';
+import OriginMap from './map/OriginMap'
+import CarbonCal from './TransportChart/CarbonCal'
 
 
 function App() {
@@ -40,13 +44,27 @@ function App() {
         </Route>
 
         <Route path="/quiz">
-          <Quiz></Quiz>
+        <div className="left-component">
+          <TransportPage></TransportPage>
+        </div>
+        <div className="right-component">
+          <CarbonEstimator></CarbonEstimator>
+        </div>
           
         </Route>
         
         
         <Route path="/travel">
-        <Weather></Weather> 
+        
+        <div className="left-component">
+          <OriginMap></OriginMap>
+        </div>
+        <div className="right-component">           
+          {/* <TransportPage></TransportPage> */}          
+          <Weather2></Weather2>
+
+         </div> 
+        
         </Route>
 
         <Route path="/information/state">
@@ -57,16 +75,15 @@ function App() {
         </Route>
 
         <Route path="/information/transport">
-        <div>           
+        <div className="left-component">
           <TransportPage></TransportPage>
-          </div>
+        </div>
+        <div className="right-component">
+          <CarbonEstimator></CarbonEstimator>
+        </div>
         </Route>
 
-        <Route path="//travel">
-          <div className="App">
-             <Weather></Weather>
-          </div>
-        </Route> 
+
 
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
