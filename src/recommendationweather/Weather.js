@@ -3,7 +3,7 @@ import axios from "axios";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 
-function Weather({ onLocationSelected }) {
+function Weather() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
   const apiKey = "AIzaSyC23ZF9voWG9vvdsTx1--xV-RI_ArHYjsA";
@@ -65,7 +65,6 @@ function Weather({ onLocationSelected }) {
           const emissionValue = dist * 3.08;
           setEmission(emissionValue.toFixed(2));
           setShowEmissionAlert(true);
-          onLocationSelected({ lat, lng });
         }
       } catch (error) {
         setError(true);

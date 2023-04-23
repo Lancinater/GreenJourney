@@ -20,79 +20,82 @@ import Description from './description/Description';
 import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
 import './layout.css';
 import Weather2 from './recommendationweather/Weather';
-import OriginMap from './recommendationweather/OriginMap'
+import OriginMap from './map/OriginMap'
 import CarbonCal from './TransportChart/CarbonCal'
 import Alert from 'react-bootstrap/Alert';
-import { LocationContext } from "./LocationContext";
 
 function App() {
-  const [destinationLocation, setDestinationLocation] = useState({});
-
-  const handleSetDestination = (location) => {
-    setDestinationLocation(location);
-  };
-
   return (
     <Router>
       <NavigationBar />
-      <LocationContext.Provider value={{ destinationLocation, setDestinationLocation }}>
+      
       <Switch>
         <Route exact path="/">
-          <HomePage></HomePage>
-          <NewsPage></NewsPage>
-          <Footer></Footer>
+             <HomePage></HomePage>
+             <NewsPage></NewsPage>
+             <Footer></Footer>
         </Route>
 
         <Route path="/footprint">
-          <div className="App">
-            <h1>Melbourne Traffic</h1>
-            <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
-          </div>
+        <div className="App">
+             <h1>Melbourne Traffic</h1>           
+             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
+          </div>                  
         </Route>
 
         <Route path="/quiz">
-          <div className="left-component">
-            <TransportPage></TransportPage>
-          </div>
-          <div className="right-component">
-            <CarbonEstimator></CarbonEstimator>
-          </div>
+        <div className="left-component">
+          <TransportPage></TransportPage>
+        </div>
+        <div className="right-component">
+          <CarbonEstimator></CarbonEstimator>
+        </div>
+          
         </Route>
-
+        
+        
         <Route path="/travel">
-          <div className="left-component">
-            <OriginMap destination={destinationLocation}></OriginMap>
-          </div>
-          <div className="right-component">
-            {/* <TransportPage></TransportPage> */}
-            <Weather2 onSetDestination={handleSetDestination}></Weather2>
-          </div>
+        
+        <div className="left-component">
+          <OriginMap></OriginMap>
+        </div>
+        <div className="right-component">           
+          {/* <TransportPage></TransportPage> */}          
+          <Weather2></Weather2>
+
+         </div> 
+        
         </Route>
 
         <Route path="/information/state">
-          <div>
+          <div> 
             <Chart></Chart>
-            <Description></Description>
-          </div>
+            <Description></Description>            
+          </div>        
         </Route>
 
-        <Route path="/information/transport">
-          <div className="left-component">
-            <TransportPage></TransportPage>
-          </div>
-          <div className="right-component">
-            <CarbonEstimator></CarbonEstimator>
-          </div>
+        <Route path="/information/transport">       
+        <div className="left-component">
+          <TransportPage></TransportPage>
+        </div>
+        <div className="right-component">
+          <CarbonEstimator></CarbonEstimator>         
+        </div>
+
+
         </Route>
+
+
 
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
             <Guide></Guide>
+            
           </div>
         </Route>
-      </Switch>
-      </LocationContext.Provider>
+      </Switch>  
     </Router>
+    
   );
 }
 
