@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CarbonEstimator.css';
 import Alert from 'react-bootstrap/Alert';
 
-const CarbonEstimator = () => {
+const CarbonEstimator = ({ distance }) => {
   const [formData, setFormData] = useState({
     type: '',
     distance: '',
@@ -12,6 +12,12 @@ const CarbonEstimator = () => {
 
   const [resultsList, setResultsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (distance) {
+      setFormData({ ...formData, distance: parseFloat(distance) });
+    }
+  }, [distance]);
 
   const typeValues = {
     car: 1,
@@ -69,7 +75,7 @@ const CarbonEstimator = () => {
           <option value="bus">Bus</option>
           <option value="transit_rail">Transit Rail</option>
           <option value="large_airplane">Large Airplane</option>
-          <option value="small_airplane">Small Airplane</option>
+          <option value="small_airplane">Small Airplane</option> 
         </select>
         <br />
         <label htmlFor="distance">Distance (km):</label>
@@ -80,6 +86,7 @@ const CarbonEstimator = () => {
           value={formData.distance}
           onChange={handleChange}
           min="0"
+        step="any"
           required
         />
            {errorMessage && (
@@ -91,9 +98,9 @@ const CarbonEstimator = () => {
         <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2>
         <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
-      {/* <Alert variant="primary">
-        It usually calculates and displays the corresponding carbon emissions based on the data provided by the user (such as energy usage, transportation mode, eating habits, etc.). These calculations can help people understand the size of their carbon footprint, and promote people to take action to reduce carbon emissions, in order to combat climate change and slow down the impact of global warming.
-      </Alert> */}
+      <Alert variant="primary" className="alert-margin" >
+       Calculated carbon emissions based on the data you provide.
+      </Alert> 
     </div>
   );
 };

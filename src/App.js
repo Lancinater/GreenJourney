@@ -22,7 +22,7 @@ import './layout.css';
 import Weather2 from './recommendationweather/Weather';
 import OriginMap from './map/OriginMap'
 import CarbonCal from './TransportChart/CarbonCal'
-
+import Alert from 'react-bootstrap/Alert';
 
 function App() {
   return (
@@ -74,13 +74,15 @@ function App() {
           </div>        
         </Route>
 
-        <Route path="/information/transport">
+        <Route path="/information/transport">       
         <div className="left-component">
           <TransportPage></TransportPage>
         </div>
         <div className="right-component">
-          <CarbonEstimator></CarbonEstimator>
+          <CarbonEstimator></CarbonEstimator>         
         </div>
+
+
         </Route>
 
 

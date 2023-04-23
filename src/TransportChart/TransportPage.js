@@ -67,8 +67,8 @@ const TransportPage = () => {
         <Bar dataKey="emissions" fill="#8884d8" />
       </BarChart>
 
-      <Alert variant="success">
-      This feature is used to compare between two different types of transport on which of the transport produces more carbon emissions. 
+      <Alert variant="success" style={{ display: 'inline-block' }}>
+      Compare the carbon emission of two different types of transport. 
       </Alert>
 
 
