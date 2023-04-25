@@ -9,4 +9,11 @@
     width: 50%;
     
   }
+
+  .centered-alert {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  
   

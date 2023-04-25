@@ -55,11 +55,14 @@ function App() {
         
         
         <Route path="/travel">
-        
+        <Alert variant="info" className='centered-alert'>
+           Enter a destination to get travel suggestions. For example, fill in: Monash university caulfield or Monash university clayton.
+        </Alert>
         <div className="left-component">
           <OriginMap></OriginMap>
         </div>
-        <div className="right-component">           
+        <div className="right-component"> 
+                  
           {/* <TransportPage></TransportPage> */}          
           <Weather2></Weather2>
 

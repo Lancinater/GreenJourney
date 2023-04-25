@@ -88,7 +88,9 @@ const TrafficMap = ({ onDistanceChange }) => {
   return (
     <div className="traffic-map-container">
       <Alert variant="primary">
-      This function is used to view real-time updates of current Australian road conditions. And when you enter the address you want to go to, the distance between you and the destination will be displayed, and it will be automatically filled into the calculator below. For example, fill in: Monash university caufield
+      This function is used to view real-time updates of current Australian road conditions. 
+      And when you enter the address you want to go to, the distance between you and the destination will be displayed, 
+      and it will be automatically filled into the calculator below. 
       </Alert>
       <h2>For example, fill in: Monash university caulfield or Monash university clayton </h2>
       <input
