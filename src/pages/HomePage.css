@@ -110,6 +110,12 @@
       transform: translateY(10px); /* 根据放大的尺寸调整位移 */
     }
 
+    .arrows-fixed {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     
 
 

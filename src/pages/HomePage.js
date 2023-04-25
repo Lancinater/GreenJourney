@@ -1,39 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './HomePage.css';
 import homeVideo from '../videos/homeVideoEdited.mp4';
 import NavigationBar from '../navigationBar/NavigationBar';
-
-
+import NewsPage from '../news/NewsPage';
+import Footer from '../footer/Footer';
 function HomePage() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const videoRef = useRef(null);
+  const newsRef = useRef(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play();
+  const scrollToNews = () => {
+    if (newsRef.current) {
+      newsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, []);
-
-  const scrollToBottom = () => {
-    if (scrollToTop) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    } else {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth',
-      });
-    }
-    setScrollToTop(!scrollToTop);
   };
 
   return (
     <div>
-     
       <header className="hero-box">
-          
         <section className="hero-image-box">
           <video ref={videoRef} className="hero-video" src={homeVideo} muted loop playsInline></video>
         </section>
@@ -47,14 +31,15 @@ function HomePage() {
             Join us and let us care about the health of the earth and leave a better and greener home for future generations. Because
             every small change will become a powerful force, and together push us towards a sustainable future.
           </p>
-          {/* <button className={styles.button} onClick={() => (window.location.href = '/information/city')}>
-            View
-          </button> */}
-          <div className="arrows" onClick={scrollToBottom}>
+          <div className="arrows" onClick={scrollToNews}>
             <i className={`fas ${scrollToTop ? 'fa-chevron-up' : 'fa-chevron-down'} icon`}></i>
           </div>
         </section>
-      </header>      
+      </header>
+      <div className="news-page-container" ref={newsRef}>
+        <NewsPage />     
+      </div>
+      <Footer />
     </div>
   );
 }

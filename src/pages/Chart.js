@@ -6,7 +6,7 @@ import './Chart.css';
 function Chart() {
 
   const [cityList, setCityList] = useState([]);
-  const [selectCity, setSelectCity] = useState("");
+  const [selectCity, setSelectCity] = useState("all");
   const [cityEmissions, setCityEmissions] = useState([]);
   const [years, setYears] = useState([]);
 
@@ -20,6 +20,7 @@ function Chart() {
           console.log(cityList);
         })
         .catch(error => console.error(error));
+        fetchEmissions("all");
     }, []);
     
     const fetchEmissions = (selectCity) => {
