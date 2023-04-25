@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
+import './CarbonEstimator.css'
 
 const CarbonEstimator = ({ distance }) => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,10 @@ const CarbonEstimator = ({ distance }) => {
     model: '',
     size: ''
   });
+
+  const [loading, setLoading] = useState(false);
+
+  const [emissionRetrieved, setEmissionRetrieved] = useState(false);
 
   const [emissionFromDatabase,setEmissionFromDatabase] = useState("");
 
@@ -37,6 +42,8 @@ const CarbonEstimator = ({ distance }) => {
   };
 
   const handleTypeChange = (e) => {
+    setEmissionRetrieved(false);
+    console.log(emissionRetrieved);
     const type = e.target.value;
     setFormData({ ...formData, type, brand: '', model: '', size: '' });
     setBrandOptions([]);
@@ -48,6 +55,8 @@ const CarbonEstimator = ({ distance }) => {
         .then(response => response.json())
         .then(brands => setBrandOptions(brands))
         .catch(error => console.error(error));
+    } else {
+      setEmissionRetrieved(true);
     }
   };
 
@@ -96,15 +105,16 @@ const CarbonEstimator = ({ distance }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(emissionFromDatabase);
     
+
     
     if (formData.distance === "0") {
       setErrorMessage("Distance cannot be 0.");
       return;
     }
-    console.log(emissionFromDatabase);
-    if (formData.type === "Car")
+
+    if (formData.type === "car")
     {
       setResultOfCal(formData.distance * emissionFromDatabase);
     }
@@ -118,12 +128,14 @@ const CarbonEstimator = ({ distance }) => {
   const handleSizeChange = (e) => {
     const size = e.target.value;
     setFormData({ ...formData, size});
-
+    setLoading(true);
     fetch(`https://www.sustrecyclefree.me/emissions/getTheCarInfo?aBrand=${formData.brand}&aModel=${formData.model}&aSize=${e.target.value}`)
     .then(response => response.json())
     .then(data => {
       const transportEmission = data.transportEmission;
       setEmissionFromDatabase(transportEmission);
+      setEmissionRetrieved(true); // Set to true after the fetch request is complete
+      setLoading(false);
     })
     .catch(error => console.error(error));
 
@@ -131,12 +143,13 @@ const CarbonEstimator = ({ distance }) => {
 
   const handleReset = () => {
     setResultOfCal(0);
+    setEmissionRetrieved(false);
   };
 
   return (
     <div className="carbon-estimator">
       <h1>Carbon Estimator</h1>
-      <form onSubmit={handleSubmit} className="form-container">
+      <form  className="form-container">
         <label htmlFor="type">Type:</label>
         <select className="select" name="type" id="type" value={formData.type} onChange={handleTypeChange} required>
 
@@ -182,7 +195,15 @@ const CarbonEstimator = ({ distance }) => {
            {errorMessage && (
              <p className="error-message">{errorMessage}</p>)}
         <br />
-        <Button type="submit" variant="outline-success" size="lg" >Calculate</Button>
+        <button
+          className={emissionRetrieved ? "" : "disabled"}
+          onClick={handleSubmit}
+          disabled={!emissionRetrieved}
+        >
+          Calculate
+        </button>
+        {loading && <p>Data retrieving...</p>}
+
       </form>
       <div className="results-total">
         {/* <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2> */}
