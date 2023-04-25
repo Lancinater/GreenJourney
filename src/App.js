@@ -39,7 +39,8 @@ function App() {
         <div className="App">
              <h1>Melbourne Traffic</h1>           
              <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
-          </div>                  
+          </div> 
+        <Footer></Footer>                 
         </Route>
 
         <Route path="/quiz">
@@ -61,19 +62,19 @@ function App() {
           <OriginMap></OriginMap>
         </div>
         <div className="right-component"> 
-                  
+                 
           {/* <TransportPage></TransportPage> */}          
           <Weather2></Weather2>
-
          </div> 
-        
+         
         </Route>
 
         <Route path="/information/state">
           <div> 
             <Chart></Chart>
             <Description></Description>            
-          </div>        
+          </div> 
+                
         </Route>
 
         <Route path="/information/transport">       
@@ -95,7 +96,9 @@ function App() {
             
           </div>
         </Route>
-      </Switch>  
+        
+      </Switch>
+        
     </Router>
     
   );
