@@ -32,8 +32,7 @@ function App() {
       <Switch>
         <Route exact path="/">
              <HomePage></HomePage>
-             <NewsPage></NewsPage>
-             <Footer></Footer>
+
         </Route>
 
         <Route path="/footprint">
