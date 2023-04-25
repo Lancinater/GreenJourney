@@ -12,6 +12,8 @@ const CarbonEstimator = ({ distance }) => {
     size: ''
   });
 
+  const [leagalDistance,setLeagalDistance] = useState(true)
+
   const [loading, setLoading] = useState(false);
 
   const [emissionRetrieved, setEmissionRetrieved] = useState(false);
@@ -88,14 +90,19 @@ const CarbonEstimator = ({ distance }) => {
   };
 
   const handleChange = (e) => {
+    setErrorMessage("");
+    
     if (e.target.name === "distance") {
       const inputValue = e.target.value;
       if (inputValue < 0) {
         setErrorMessage("Distance cannot be a negative number.");
+        setLeagalDistance(false);
       } else if (inputValue === 0) {
         setErrorMessage("Distance cannot be 0.");
+        setLeagalDistance(false);
       } else {
         setErrorMessage("");
+        setLeagalDistance(true);
       }
     }
 
@@ -111,17 +118,19 @@ const CarbonEstimator = ({ distance }) => {
     
     if (formData.distance === "0") {
       setErrorMessage("Distance cannot be 0.");
+
       return;
+    } 
+    else{
+      if (formData.type === "car")
+      {
+        setResultOfCal(formData.distance * emissionFromDatabase);
+        
+      }
+      else {
+        setResultOfCal(formData.distance * typeValues[formData.type]);
+      }
     }
-
-    if (formData.type === "car")
-    {
-      setResultOfCal(formData.distance * emissionFromDatabase);
-    }
-    else {
-      setResultOfCal(formData.distance * typeValues[formData.type]);
-    }
-
     
   };
 
@@ -144,13 +153,15 @@ const CarbonEstimator = ({ distance }) => {
   const handleReset = () => {
     setResultOfCal(0);
     setEmissionRetrieved(false);
-    setFormData({
-      type: '',
-      distance: formData.distance,
-      brand: '',
-      model: '',
-      size: ''
-    });
+    setLeagalDistance(true);
+    setErrorMessage("");
+      setFormData({
+        type: '',
+        distance: '',
+        brand: '',
+        model: '',
+        size: ''
+      });
 
   };
 
@@ -204,7 +215,7 @@ const CarbonEstimator = ({ distance }) => {
              <p className="error-message">{errorMessage}</p>)}
         <br />
         <button
-          className={emissionRetrieved ? "" : "disabled"}
+          className={emissionRetrieved && leagalDistance ? "" : "disabled"}
           onClick={handleSubmit}
           disabled={!emissionRetrieved}
         >
@@ -215,7 +226,7 @@ const CarbonEstimator = ({ distance }) => {
       </form>
       <div className="results-total">
         {/* <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2> */}
-        <h2>Expected Emissions: {resultOfCal} g</h2>
+        <h2>Total: {resultOfCal}</h2>
         <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
       <Alert variant="primary" className="alert-margin" >
