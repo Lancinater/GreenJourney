@@ -54,19 +54,25 @@ const TrafficMap = ({ onDistanceChange }) => {
       },
       (response, status) => {
         if (status === "OK") {
-          const elementStatus = response.rows[0].elements[0].status;
-          if (elementStatus === "NOT_FOUND" || elementStatus === "ZERO_RESULTS") {
+          const destinationAddress = response.destinationAddresses[0];
+          if (!destinationAddress) {
             setError("Invalid destination. Please try again.");
           } else {
-            setError(null);
-            const distanceResult = response.rows[0].elements[0].distance.text;
-            setDistance(distanceResult);
-            onDistanceChange(distanceResult);
+            const elementStatus = response.rows[0].elements[0].status;
+            if (elementStatus === "NOT_FOUND" || elementStatus === "ZERO_RESULTS") {
+              setError("Invalid destination. Please try again.");
+            } else {
+              setError(null);
+              const distanceResult = response.rows[0].elements[0].distance.text;
+              setDistance(distanceResult);
+              onDistanceChange(distanceResult);
+            }
           }
         } else {
           console.error("Error:", status);
           setError("Failed to calculate distance. Please try again.");
         }
+        
       }
     );
   };
@@ -82,8 +88,9 @@ const TrafficMap = ({ onDistanceChange }) => {
   return (
     <div className="traffic-map-container">
       <Alert variant="primary">
-      This function is used to check the current real-time updates of Australian traffic. Here you can get detailed information about traffic congestion, and you can choose which means of transportation to take more conveniently through traffic conditions, thereby reducing carbon emissions.
+      This function is used to view real-time updates of current Australian road conditions. And when you enter the address you want to go to, the distance between you and the destination will be displayed, and it will be automatically filled into the calculator below. For example, fill in: Monash university caufield
       </Alert>
+      <h2>For example, fill in: Monash university caulfield or Monash university clayton </h2>
       <input
         type="text"
         placeholder="Enter destination"
