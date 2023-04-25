@@ -57,7 +57,10 @@ const CarbonEstimator = ({ distance }) => {
         .then(response => response.json())
         .then(brands => setBrandOptions(brands))
         .catch(error => console.error(error));
-    } else {
+    } else if (type === "") {
+      setEmissionRetrieved(false);
+    }
+    else {
       setEmissionRetrieved(true);
     }
   };
