@@ -309,7 +309,7 @@ function Weather() {
     <div className="app">
       <h1 className="title">Green Travel Recommendation</h1>
       <div className="recommendationAlert">
-        <Alert variant="primary" className='recommendationAlert'>We will consider the distance, time, weather and carbon emissions to recommend the most reasonable low-carbon travel method for you</Alert>
+        <Alert variant="primary" className='recommendationAlert'>We will comprehensively consider the factors of distance and weather to recommend reasonable travel methods for you. Please fill in the location eg: Monash university Caulfield.</Alert>
       </div>
       <div className="search">
         <input
@@ -342,8 +342,8 @@ function Weather() {
             {data.main ? <p>Weather: {data.main.temp.toFixed()}°F {data.weather[0].main}</p> : null}
         </div>
         {data.main ? <div className="recommendation-blocks">
-
-                                     <div className={blockInfo? blockInfo[0][3]:"block"}>
+            <div className="upper-block">
+                                    <div className={blockInfo? blockInfo[0][3]:"block"}>
                                          <div className="first-line">
                                              <p>Recommendation 1</p>
                                              <div className="tag">
@@ -372,6 +372,8 @@ function Weather() {
                                              <p>{blockInfo? blockInfo[1][4]:null}</p>
                                          </div>
                                      </div>
+            </div>
+            <div className="lower-block">
                                      <div className={blockInfo? blockInfo[2][3]:"block"}>
                                          <div className="first-line">
                                              <p>Recommendation 3</p>
@@ -401,6 +403,8 @@ function Weather() {
                                              <p>{blockInfo? blockInfo[3][4]:null}</p>
                                          </div>
                                      </div>
+            </div>
+
                                    </div> : null}
             <div className={data.main?"travel-recommendation":"nothing"}>Distance: {distance}km away from you </div>
             <div className="travel-recommendation">{getTravelRecommendation()}</div>

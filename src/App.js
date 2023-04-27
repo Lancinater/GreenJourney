@@ -78,13 +78,13 @@ function App() {
            Enter a destination to get travel suggestions. For example, fill in: Monash university caulfield or Monash university clayton.
         </Alert>
         <div className="middle-recommendation">
-            <div className="left-component">
+            {/*<div className="left-component">
               <OriginMap></OriginMap>
-            </div>
-            <div className="right-component">
+            </div>*/}
+            <div>
               {/* <TransportPage></TransportPage> */}
               <Weather2></Weather2>
-             </div>
+            </div>
          </div>
             <Alert variant="info" className='bottom-alert'>
                 Tips:   Are you satisfied with our recommendation results, and want to check more low-carbon travel knowledge?

@@ -42,9 +42,9 @@
 }
 
 .block{
-    margin: 10px;
+    margin: 20px;
     background-color: #DEF1FF;
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 
@@ -52,7 +52,7 @@
     height: 100%;
     margin: 10px;
     background-color: #FE8989;
-    width: 90%;
+    width: 100%;
     position: relative;
 }
 
@@ -80,11 +80,13 @@
     position: absolute;
     top: 0;
     right: 0;
+    margin-right: 2px;
+    margin-top: 2px;
 }
 
 .tag > p{
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     margin: 10px;
 }
 
@@ -116,6 +118,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    margin-bot:2px;
 }
 
 .ok{
@@ -134,13 +137,13 @@
 
 .ok > p{
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     margin:10px;
 }
 
 .reason > p{
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     margin:10px;
 }
 
@@ -153,4 +156,12 @@
 
 .nothing{
     display:none;
+}
+
+.upper-block{
+    display: flex;
+}
+
+.lower-block{
+    display:flex;
 }
