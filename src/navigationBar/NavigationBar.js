@@ -59,40 +59,45 @@ function NavigationBar() {
         </div>
         <div className="rightSide">
             <ul id={isClickedFolds?"show":""}>
-                    <li>
-                      <a href="/">Home</a>
-                    </li>
-                    <li>
-                      <a href="/footprint">Footprint</a>
-                    </li>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/footprint">Footprint</a>
+            </li>
 
 
 
 
-                    {/* <li>
-                      <a href="/quiz">Quiz</a>
-                    </li>  */}
+            {/* <li>
+              <a href="/quiz">Quiz</a>
+            </li>  */}
 
-                    <li>
-                      <a href="/travel">Travel</a>
-                    </li>
+            <li>
+              <a href="/travel">Travel</a>
+            </li>
 
-                     {/* <li>
-                      <a href="/test">Test</a>
-                    </li>  */}
+              {/* <li>
+              <a href="/test">Test</a>
+            </li>  */}
 
-                    <li className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-                      <a>Information</a>
-                      <ul className={isDropdownVisible ? "visible" : "hidden"}>
-                        <li><a href="/information/state">State Information</a></li>
-                        <li><a href="/information/transport">Transport Information</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+            <li>
+              <a href="/education">Education</a>
+            </li>
+            <li className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
+              <a>Information</a>
+              <ul className={isDropdownVisible ? "visible" : "hidden"}>
+                <li><a href="/information/state">State Information</a></li>
+                <li><a href="/information/transport">Transport Information</a></li>
+              </ul>
+            </li>
+           </ul>
 
-                   <div id="mobile" onClick = {() => setIsClickedFolds(!isClickedFolds)}>
-                     <i className={isClickedFolds? "fas fa-times":"fas fa-bars"}></i>
-                   </div>
+            
+
+            <div id="mobile" onClick = {() => setIsClickedFolds(!isClickedFolds)}>
+              <i className={isClickedFolds? "fas fa-times":"fas fa-bars"}></i>
+            </div>
         </div>
     </div>
     )

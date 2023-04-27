@@ -1,10 +1,10 @@
 import './App.css';
 import NavigationBar from './navigationBar/NavigationBar';
-import React, {useState} from 'react'
-import axios from 'axios'
+import React, { useState } from 'react';
+import axios from 'axios';
 import CarbonCalculator from './carbonCalculator/CarbonCalculator';
 import Weather from './demoAPI/Weather';
-import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Quiz from './quiz/Quiz';
 import HomePage from './pages/HomePage';
 import NewsPage from './news/NewsPage';
@@ -20,40 +20,58 @@ import Description from './description/Description';
 import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
 import './layout.css';
 import Weather2 from './recommendationweather/Weather';
-import OriginMap from './map/OriginMap'
-import CarbonCal from './TransportChart/CarbonCal'
+import OriginMap from './map/OriginMap';
+import CarbonCal from './TransportChart/CarbonCal';
+import ArticlePage from './EducationPage/ArticlePage';
 import Alert from 'react-bootstrap/Alert';
+import EducationHomePage1 from './EducationPage/EducationHomePage1';
+
 
 function App() {
   return (
     <Router>
       <NavigationBar />
-      
+
       <Switch>
         <Route exact path="/">
-             <HomePage></HomePage>
+          <HomePage></HomePage>
+          
+          
+        </Route>
+
+
+        <Route path="/education/:id">
+          <ArticlePage />
+        </Route>
+        <Route path="/education">
+          <div>
+            <EducationHomePage1></EducationHomePage1>
+          </div>
+        </Route>
+
+        {/* <Route path="/education/:id">
+          <ArticlePage />
+        </Route> */}
+        
+
+        <Route path="/quiz">
+          <div className="left-component">
+            <TransportPage></TransportPage>
+          </div>
+          <div className="right-component">
+            <CarbonEstimator></CarbonEstimator>
+          </div>
 
         </Route>
 
         <Route path="/footprint">
-        <div className="App">
-             <h1>Melbourne Traffic</h1>           
-             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
-          </div> 
-        <Footer></Footer>                 
+          <div className="App">
+            <h1>Melbourne Traffic</h1>
+            <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
+          </div>
         </Route>
+    
 
-        <Route path="/quiz">
-        <div className="left-component">
-          <TransportPage></TransportPage>
-        </div>
-        <div className="right-component">
-          <CarbonEstimator></CarbonEstimator>
-        </div>
-          
-        </Route>
-        
-        
         <Route path="/travel">
         <div className="whole-recommendation">
         <Alert variant="info" className='centered-alert'>
@@ -76,37 +94,33 @@ function App() {
         </Route>
 
         <Route path="/information/state">
-          <div> 
+          <div>
             <Chart></Chart>
-            <Description></Description>            
-          </div> 
-                
+            <Description></Description>
+          </div>
         </Route>
 
-        <Route path="/information/transport">       
-        <div className="left-component">
-          <TransportPage></TransportPage>
-        </div>
-        <div className="right-component">
-          <CarbonEstimator></CarbonEstimator>         
-        </div>
+        <Route path="/information/transport">
+          <div >
+            <TransportPage></TransportPage>
+          </div>
+          
 
 
         </Route>
-
+        
+        
 
 
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
             <Guide></Guide>
-            
+
           </div>
         </Route>
-        
       </Switch>
-        
     </Router>
-    
+
   );
 }
 
