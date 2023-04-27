@@ -20,7 +20,14 @@
 }
 
 .weatherInfo{
-    padding: 20px;
+    margin: 30px;
+}
+
+.weatherInfo > p{
+    font-size: 20px;
+    height: 10px;
+    text-align: left;
+    margin-left: 20px;
 }
 
 .search{
@@ -142,4 +149,8 @@
     justify-content:center;
     text-align:center;
     font-size: 20px;
+}
+
+.nothing{
+    display:none;
 }

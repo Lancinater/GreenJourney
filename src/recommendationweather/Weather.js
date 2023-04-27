@@ -338,16 +338,8 @@ function Weather() {
       ) : (
       <div>
         <div className="weatherInfo">
-          <div className="top">
-            <div className="location">
-              {data.main ? <p>Destination: {data.name}</p> : null}
-            </div>
-
-            <div className="temp">
-              {data.main ? <p>Weather: {data.main.temp.toFixed()}°F {data.weather[0].main}</p> : null}
-            </div>
-
-          </div>
+            {data.main ? <p>Destination: {data.name}</p> : null}
+            {data.main ? <p>Weather: {data.main.temp.toFixed()}°F {data.weather[0].main}</p> : null}
         </div>
         {data.main ? <div className="recommendation-blocks">
 
@@ -410,7 +402,7 @@ function Weather() {
                                          </div>
                                      </div>
                                    </div> : null}
-            <div className="travel-recommendation">Distance: {distance}km away from you </div>
+            <div className={data.main?"travel-recommendation":"nothing"}>Distance: {distance}km away from you </div>
             <div className="travel-recommendation">{getTravelRecommendation()}</div>
 
        </div>
