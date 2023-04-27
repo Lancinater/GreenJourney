@@ -80,3 +80,20 @@
   text-align: center;
   background-color: #c8dbe5;
 }
+
+.whole-recommendation{
+  display: flex;
+  flex-direction: column;
+}
+
+.centered-alert{
+    margin-top:20px;
+}
+
+.bottom-alert{
+    align-items: center;
+        justify-content: center;
+        margin: 20px;
+        font-size: 22px;
+        text-align: center;
+}
