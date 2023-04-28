@@ -229,7 +229,7 @@ const CarbonEstimator = ({ distance }) => {
       </form>
       <div className="results-total">
         {/* <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2> */}
-        <h2>Total: {resultOfCal}</h2>
+        <h2>Total: {resultOfCal} g co2</h2>
         <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
       <Alert variant="primary" className="alert-margin" >
