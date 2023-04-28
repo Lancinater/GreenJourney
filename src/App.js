@@ -47,6 +47,7 @@ function App() {
           <div>
             <EducationHomePage1></EducationHomePage1>
           </div>
+          <Footer></Footer>
         </Route>
 
         {/* <Route path="/education/:id">
@@ -69,14 +70,15 @@ function App() {
             <h1>Melbourne Traffic</h1>
             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
           </div>
+          <Footer></Footer>
         </Route>
     
 
         <Route path="/travel">
         <div className="whole-recommendation">
-        <Alert variant="info" className='centered-alert'>
+        {/* <Alert variant="info" className='centered-alert'>
            Enter a destination to get travel suggestions. For example, fill in: Monash university caulfield or Monash university clayton.
-        </Alert>
+        </Alert> */}
         <div className="middle-recommendation">
             {/*<div className="left-component">
               <OriginMap></OriginMap>
@@ -98,11 +100,13 @@ function App() {
             <Chart></Chart>
             <Description></Description>
           </div>
+          <Footer></Footer>
         </Route>
 
         <Route path="/information/transport">
           <div >
             <TransportPage></TransportPage>
+            <Footer></Footer>
           </div>
           
 
