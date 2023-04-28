@@ -164,3 +164,7 @@ nav li.dropdown:hover a {
     justify-content: center;
     align-items: center;
 }
+
+.Navbar ul li a.active {
+  text-decoration: underline;
+}
