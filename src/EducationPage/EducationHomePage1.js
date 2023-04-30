@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 function EducationHomePage1 () {
     return (
-        <div>
+        <div className="education-page">
             <h1>Do you know?</h1>
             <p>learn something about carbon emission!</p>
             <h3>Related Information</h3>

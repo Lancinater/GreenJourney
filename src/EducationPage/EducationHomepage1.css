@@ -2,7 +2,7 @@ h1 {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    margin: 2rem 0;
+    
   }
   
   p {
@@ -79,3 +79,19 @@ h1 {
     max-width: 320px;
     height: 200px;
   }
+
+  .education-page {
+    background-image: url('https://img.ixintu.com/upload/jpg/20200630/0f677b459593e8aafd9c79c196349842_800_440.jpg!bg'); /* 使用实际图片的相对路径替换 './background.jpg' */
+    background-size: cover; /* 图片将覆盖整个元素区域 */
+    background-repeat: no-repeat; /* 图片不重复 */
+    background-position: center center; /* 图片居中 */
+    background-attachment: fixed; /* 图片不随滚动条滚动 */
+    min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
+  }
+
+/* .education-page h1,
+.education-page p,
+.education-page h3 {
+  color: white;
+} */
+
