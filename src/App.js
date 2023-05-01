@@ -25,6 +25,8 @@ import CarbonCal from './TransportChart/CarbonCal';
 import ArticlePage from './EducationPage/ArticlePage';
 import Alert from 'react-bootstrap/Alert';
 import EducationHomePage1 from './EducationPage/EducationHomePage1';
+// import IcMap from './record/Record';
+import Record from './record/Record';
 
 
 function App() {
@@ -95,6 +97,8 @@ function App() {
          <Footer></Footer>
         </Route>
 
+        
+
         <Route path="/information/state">
           <div>
             <Chart></Chart>
@@ -112,10 +116,15 @@ function App() {
 
 
         </Route>
+
+        <Route path="/test">
+          <div>
+            <Record></Record>
+          </div>
+          
+        </Route>
         
         
-
-
         <Route path="*" render={() => <Redirect to="/guide" />}>
           <div>
             <Guide></Guide>

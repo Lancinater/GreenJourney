@@ -91,6 +91,19 @@ function NavigationBar() {
         Travel
       </a>
     </li>
+
+
+    <li>
+      <a
+        href="/test"
+        className={currentUrl === "/test" ? "active" : ""}
+        onClick={handleClick}
+      >
+        Test
+      </a>
+    </li>
+
+
     <li>
       <a
         href="/education"
