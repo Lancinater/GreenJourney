@@ -8,6 +8,8 @@ import {
 } from "@react-google-maps/api";
 import Alert from "react-bootstrap/Alert";
 import Table from "react-bootstrap/Table";
+import './Record.css';
+import Highcharts from "highcharts";
 
 const apiKey = "AIzaSyC23ZF9voWG9vvdsTx1--xV-RI_ArHYjsA";
 
@@ -108,6 +110,41 @@ const Record = () => {
     }
   }, []);
 
+
+  useEffect(() => {
+    if (showResults) {
+      updateHighchart(results);
+    }
+  }, [results]);
+
+  const updateHighchart = (results) => {
+    const categories = Object.keys(results);
+    const carbonFootprintData = categories.map((day) => results[day].carbonFootprint);
+
+    Highcharts.chart("container", {
+      chart: {
+        type: "line",
+      },
+      title: {
+        text: "Carbon Footprint by Day of Week",
+      },
+      xAxis: {
+        categories: categories,
+      },
+      yAxis: {
+        title: {
+          text: "Carbon Footprint (g)",
+        },
+      },
+      series: [
+        {
+          name: "Carbon Footprint",
+          data: carbonFootprintData,
+        },
+      ],
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     calculateDistance();
@@ -169,6 +206,7 @@ const Record = () => {
       </tbody>
     </table>
 )}
+      <div id="container" style={{ width: "100%", height: "400px", marginTop: "20px" }}></div>
       </LoadScript>
     </div>
   );
