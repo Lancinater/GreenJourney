@@ -68,7 +68,7 @@ function App() {
         </Route>
 
         <Route path="/footprint">
-          <div className="App">
+          <div className="calbackground">
             <h1>Melbourne Traffic</h1>
             <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
           </div>

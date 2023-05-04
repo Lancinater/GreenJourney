@@ -29,6 +29,8 @@
   color: white;
 }
 
+
+
 .App-link {
   color: #61dafb;
 }
@@ -96,4 +98,13 @@
         margin: 20px;
         font-size: 22px;
         text-align: center;
+}
+
+.calbackground{
+  text-align: center;
+  background-image: url('./3ALXjA8W90.jpg'); /*  './background.jpg' */
+  background-size: cover; /* 图片将覆盖整个元素区域 */
+  background-repeat: no-repeat; /* 图片不重复 */
+  background-position: center center; /* 图片居中 */  
+  min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
 }
