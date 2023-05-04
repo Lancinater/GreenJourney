@@ -155,9 +155,12 @@ const Record = () => {
   }, [])
 
   return (
-    <div>
+    <div className="calbackground">
       <LoadScript googleMapsApiKey={apiKey} onLoad={onLoad}>
-      <h1>Carbon Footprint Calculator</h1>
+      <h1>Show your Carbon Footprint</h1>
+      <Alert variant="dark" style={{ display: 'inline-block' }}>
+      Please fill in your destination and departure date, for example, select Monday as the date and go to Monash university caulfield as your destination.
+      </Alert>
       <form onSubmit={handleSubmit}>
         <label>
           Transportation:

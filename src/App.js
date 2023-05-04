@@ -100,7 +100,7 @@ function App() {
         
 
         <Route path="/information/state">
-          <div>
+          <div className="calbackground">
             <Chart></Chart>
             <Description></Description>
           </div>
@@ -108,11 +108,11 @@ function App() {
         </Route>
 
         <Route path="/information/transport">
-          <div >
+          <div className="calbackground">
             <TransportPage></TransportPage>
-            <Footer></Footer>
+            
           </div>
-          
+          <Footer></Footer>
 
 
         </Route>
