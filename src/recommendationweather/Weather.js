@@ -28,7 +28,7 @@ function Weather() {
   }, []);
 
   const fetchWeatherData = useCallback(async (latitude, longitude) => {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=88e2ff032ca8b683249ce94aef6dd767`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=88e2ff032ca8b683249ce94aef6dd767`;
     try {
       const response = await axios.get(weatherUrl);
       setData(response.data);
@@ -339,7 +339,7 @@ function Weather() {
       <div>
         <div className="weatherInfo">
             {data.main ? <p>Destination: {data.name}</p> : null}
-            {data.main ? <p>Weather: {data.main.temp.toFixed()}°F {data.weather[0].main}</p> : null}
+            {data.main ? <p>Weather: {data.main.temp.toFixed()}°C {data.weather[0].main}</p> : null}
         </div>
         {data.main ? <div className="recommendation-blocks">
             <div className="upper-block">
