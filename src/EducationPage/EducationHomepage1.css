@@ -81,7 +81,7 @@ h1 {
   }
 
   .education-page {
-    background-image: url('https://img.ixintu.com/upload/jpg/20200630/0f677b459593e8aafd9c79c196349842_800_440.jpg!bg'); /* 使用实际图片的相对路径替换 './background.jpg' */
+    background-image: url('./RdPmVLWqXy.jpg'); /*  './background.jpg' */
     background-size: cover; /* 图片将覆盖整个元素区域 */
     background-repeat: no-repeat; /* 图片不重复 */
     background-position: center center; /* 图片居中 */

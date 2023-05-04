@@ -68,7 +68,16 @@ const TransportPage = () => {
       </BarChart>
 
       <Alert variant="success" style={{ display: 'inline-block' }}>
-      Compare the carbon emission of two different types of transport. 
+      Compare the carbon emission of two different types of transport.   
+      </Alert>
+
+      <Alert variant="" style={{ display: 'inline-block' }}>
+      This two bar comparison chart is used to compare the different average carbon emissions from the 9 different transports ranging from motorbikes to planes. After finishing exploring the different graphs, the transport that produces the most carbon emissions is unsurprisingly the large planes followed by the small planes at the rate of 434.46 and 233.6 gCO2/k respectively. 
+
+On the other hand, the transport that produces the least amount of carbon emissions is not electric vehicles. The transport that produces the least amount of carbon emissions is transit rail with a surprising rate of 35.08 gCO2/k while the electric vehicles have a rate of 53.17 gCO2/k. 
+
+The other transports that are placed from 3rd and 7th are motorbike, bus, and the 3 different sizes of cars from small to big with the emission rates of 102.89, 104.71, 142.08, 170.61 and 209.47 gCO2/k respectively.
+   
       </Alert>
 
 
