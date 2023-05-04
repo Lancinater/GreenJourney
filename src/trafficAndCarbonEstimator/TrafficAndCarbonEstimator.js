@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import TrafficMap from './TrafficMap';
 import CarbonEstimator from './CarbonEstimator';
+// import './TrafficAndCarbonEstimator.css'
 
 const TrafficAndCarbonEstimator = () => {
   const [distance, setDistance] = useState('');

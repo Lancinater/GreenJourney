@@ -8,6 +8,7 @@ import {
 } from "@react-google-maps/api";
 import "./TrafficMap.module.css";
 import Alert from "react-bootstrap/Alert";
+import styles from "./TrafficMap.module.css";
 
 const mapContainerStyle = {
   width: "100%",
