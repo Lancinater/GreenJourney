@@ -96,7 +96,7 @@ function NavigationBar() {
     <li>
       <a
         href="/track"
-        className={currentUrl === "/test" ? "active" : ""}
+        className={currentUrl === "/track" ? "active" : ""}
         onClick={handleClick}
       >
         Track
