@@ -117,7 +117,7 @@ function App() {
 
         </Route>
 
-        <Route path="/test">
+        <Route path="/track">
           <div>
             <Record></Record>
           </div>

@@ -95,11 +95,11 @@ function NavigationBar() {
 
     <li>
       <a
-        href="/test"
+        href="/track"
         className={currentUrl === "/test" ? "active" : ""}
         onClick={handleClick}
       >
-        Test
+        Track
       </a>
     </li>
 

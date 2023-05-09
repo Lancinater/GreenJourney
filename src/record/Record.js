@@ -10,10 +10,13 @@ import Alert from "react-bootstrap/Alert";
 import Table from "react-bootstrap/Table";
 import './Record.css';
 import Highcharts from "highcharts";
+import Button from 'react-bootstrap/Button';
 
 const apiKey = "AIzaSyC23ZF9voWG9vvdsTx1--xV-RI_ArHYjsA";
 
 const Record = () => {
+  const [inputDistance, setInputDistance] = useState("");
+  const [error, setError] = useState("");
   const [userLocation, setUserLocation] = useState(null);
   const [destination, setDestination] = useState("");
   const [distance, setDistance] = useState("");
@@ -27,6 +30,11 @@ const Record = () => {
     Thursday: { distance: 0, carbonFootprint: 0 },
     Friday: { distance: 0, carbonFootprint: 0 },
   });
+
+  const handleInputDistanceChange = (event) => {
+    setInputDistance(event.target.value);
+  };
+
   const [showResults, setShowResults] = useState(false);
 
   const handleTransportationChange = (event) => {
@@ -42,6 +50,22 @@ const Record = () => {
   };
 
   const calculateDistance = () => {
+    if (inputDistance === "" && destination === "") {
+      setError("请输入距离或目的地");
+      return;
+    }
+
+    if (inputDistance !== "" && parseFloat(inputDistance) > 0) {
+      setError(""); // 清除错误提示
+      const distanceResult = parseFloat(inputDistance);
+      setDistance(distanceResult);
+      calculateCarbonEmission(distanceResult);
+    } else {
+    if (inputDistance !== "" && parseFloat(inputDistance) >= 0) {
+      const distanceResult = parseFloat(inputDistance);
+      setDistance(distanceResult);
+      calculateCarbonEmission(distanceResult);
+    } else {
     const distanceMatrix = new window.google.maps.DistanceMatrixService();
     distanceMatrix.getDistanceMatrix(
       {
@@ -68,7 +92,24 @@ const Record = () => {
           console.error("Error:", status);
         }
       }
-    );
+    );}}
+  };
+
+  const handleReset = () => {
+    setInputDistance("");
+    setDestination("");
+    setError("");
+    setShowResults(false);
+
+    const resetResults = {
+      Monday: { distance: 0, carbonFootprint: 0 },
+      Tuesday: { distance: 0, carbonFootprint: 0 },
+      Wednesday: { distance: 0, carbonFootprint: 0 },
+      Thursday: { distance: 0, carbonFootprint: 0 },
+      Friday: { distance: 0, carbonFootprint: 0 },
+    };
+    setResults(resetResults);
+    updateHighchart(resetResults);
   };
 
   const calculateCarbonEmission = (distance) => {
@@ -187,8 +228,21 @@ const Record = () => {
           <input type="text" value={destination} onChange={handleDestinationChange} />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <label>
+            Distance (optional):
+            <input
+              type="number"
+              min="0"
+              step="any"
+              value={inputDistance}
+              onChange={handleInputDistanceChange}
+            />
+          </label>
+          <br />
+        <Button type="submit" variant="outline-info" size="lg">Submit it</Button>
+
       </form>
+      {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
       {showResults && (
       <table style={{ margin: "20px auto", borderCollapse: "collapse", textAlign: "center" }}>
       <thead>
@@ -209,6 +263,9 @@ const Record = () => {
       </tbody>
     </table>
 )}
+        <Button type="button" onClick={handleReset} variant="outline-info" size="lg" style={{ marginLeft: "10px" }}>
+          Reset
+        </Button>
       <div id="container" style={{ width: "100%", height: "400px", marginTop: "20px" }}></div>
       </LoadScript>
     </div>

@@ -211,7 +211,7 @@ const CarbonEstimator = ({ distance }) => {
           value={formData.distance}
           onChange={handleChange}
           min="0"
-        step="any"
+          step="any"
           required
         />
            {errorMessage && (
