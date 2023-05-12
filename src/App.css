@@ -1,10 +1,5 @@
 .App {
   text-align: center;
-   
-}
-
-.App h1 {
-  font-weight: bold;
 }
 
 .App-logo {
@@ -29,8 +24,6 @@
   color: white;
 }
 
-
-
 .App-link {
   color: #61dafb;
 }
@@ -42,70 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.flex-container{
-  display: flex;
-  justify-content: space-around;
-  margin:50px;
-}
-
-.font-size{
-  font-size: 2rem;
-}
-
-.backgroundtext{
-  text-align: center;
-  
-  
-}
-
-.backgroundtext h1 {
-  font-weight: bold;
-}
-
-.background{
-  text-align: center;
-  background-color: #c8dbe5;
-  
-}
-
-.background h1 {
-  font-weight: bold;
-}
-
-.font-size{
-  font-size: 2rem;
-}
-
-.background{
-  text-align: center;
-  background-color: #c8dbe5;
-}
-
-.whole-recommendation{
-  display: flex;
-  flex-direction: column;
-}
-
-.centered-alert{
-    margin-top:20px;
-}
-
-.bottom-alert{
-    align-items: center;
-        justify-content: center;
-        margin: 20px;
-        font-size: 22px;
-        text-align: center;
-}
-
-.calbackground{
-  text-align: center;
-  background-image: url('./3ALXjA8W90.jpg'); /*  './background.jpg' */
-  background-size: cover; /* 图片将覆盖整个元素区域 */
-  background-repeat: no-repeat; /* 图片不重复 */
-  background-position: center center; /* 图片居中 */
-  /* background-attachment: fixed;   */
-  min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
 }

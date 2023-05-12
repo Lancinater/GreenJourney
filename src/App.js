@@ -1,83 +1,52 @@
+import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
 import './App.css';
-import NavigationBar from './navigationBar/NavigationBar';
-import React, { useState } from 'react';
-import axios from 'axios';
-import CarbonCalculator from './carbonCalculator/CarbonCalculator';
-import Weather from './demoAPI/Weather';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Quiz from './quiz/Quiz';
-import HomePage from './pages/HomePage';
-import NewsPage from './news/NewsPage';
-import Information from './pages/Information';
-import Chart from './pages/Chart';
-import Home from './pages/Home';
-import TrafficMap from './pages/TrafficMap';
-import CarbonEstimator from './emission/CarbonEstimator';
-import TransportPage from './TransportChart/TransportPage';
-import Guide from './pages/Guide';
+import NavigationBar from './NavigationBar/NavigationBar';
+import HomeHero from './homepage/homehero';
+import HomeFeatures from './homepage/homefeatures';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useState , useEffect} from 'react';
 import Footer from './footer/Footer';
-import Description from './description/Description';
+import React from 'react';
+import SubHeader from './subheader/Subheader';
 import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
-import './layout.css';
 import Weather2 from './recommendationweather/Weather';
-import OriginMap from './map/OriginMap';
-import CarbonCal from './TransportChart/CarbonCal';
-import ArticlePage from './EducationPage/ArticlePage';
-import Alert from 'react-bootstrap/Alert';
-import EducationHomePage1 from './EducationPage/EducationHomePage1';
-// import IcMap from './record/Record';
+import { Alert } from 'react-bootstrap';
 import Record from './record/Record';
 
-
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  }, []);
+
   return (
     <Router>
       <NavigationBar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HomeHero />
+            <HomeFeatures />
+          </>} />
 
-      <Switch>
-        <Route exact path="/">
-          <HomePage></HomePage>
+        <Route path="/footprint" element={
+          <main id="main">
+            <SubHeader name = "Footprint"/>
+            <TrafficAndCarbonEstimator/>
+          </main>}/>
           
-          
-        </Route>
+       
 
-
-        <Route path="/education/:id">
-          <ArticlePage />
-        </Route>
-        <Route path="/education">
-          <div>
-            <EducationHomePage1></EducationHomePage1>
-          </div>
-          <Footer></Footer>
-        </Route>
-
-        {/* <Route path="/education/:id">
-          <ArticlePage />
-        </Route> */}
-        
-
-        <Route path="/quiz">
-          <div className="left-component">
-            <TransportPage></TransportPage>
-          </div>
-          <div className="right-component">
-            <CarbonEstimator></CarbonEstimator>
-          </div>
-
-        </Route>
-
-        <Route path="/footprint">
-          <div className="calbackground">
-            <h1>Melbourne Traffic</h1>
-            <TrafficAndCarbonEstimator></TrafficAndCarbonEstimator>
-          </div>
-          <Footer></Footer>
-        </Route>
-    
-
-        <Route path="/travel">
-        <div className="whole-recommendation">
+        <Route path="/travel" element={
+          <main id="main">
+            <SubHeader name = "Travel"/>
+            <div className="whole-recommendation">
         {/* <Alert variant="info" className='centered-alert'>
            Enter a destination to get travel suggestions. For example, fill in: Monash university caulfield or Monash university clayton.
         </Alert> */}
@@ -94,46 +63,45 @@ function App() {
                 Tips:   Are you satisfied with our recommendation results, and want to check more low-carbon travel knowledge?
             </Alert>
          </div>
-         <Footer></Footer>
+          </main>}>
+      
         </Route>
 
         
+        <Route path="/educaiton" element={
+          <main id="main">
+            <SubHeader name="Education"/>
 
-        <Route path="/information/state">
-          <div className="calbackground">
-            <Chart></Chart>
-            <Description></Description>
-          </div>
-          <Footer></Footer>
-        </Route>
+          </main>}>
+        
+        </Route> 
 
-        <Route path="/information/transport">
-          <div className="calbackground">
-            <TransportPage></TransportPage>
-            
-          </div>
-          <Footer></Footer>
-
-
-        </Route>
-
-        <Route path="/track">
-          <div>
-            <Record></Record>
-          </div>
+        <Route path="/information/state" element={
+          <main id="main">
+            <SubHeader name = "State Information"/>
           
+          </main>}>
+        
         </Route>
-        
-        
-        <Route path="*" render={() => <Redirect to="/guide" />}>
-          <div>
-            <Guide></Guide>
 
-          </div>
+        <Route path="/information/transport" element={
+          <main id="main">
+            <SubHeader name = "Transport Information"/>
+          
+          </main>}>
+        
         </Route>
-      </Switch>
+
+        <Route path="/track" element={
+          <main id="main">
+            <SubHeader name = "track"/>
+            <Record></Record>
+          </main>}>
+        
+        </Route>
+      </Routes>
+      <Footer/>
     </Router>
-
   );
 }
 

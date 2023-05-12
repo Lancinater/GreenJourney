@@ -1,135 +1,130 @@
-import './NavigationBar.css';
-import React from 'react';
-import icon from "../pages/icon.jpg";
-import { useState } from 'react';
+import React from "react";
+import '../assets/vendor/animate.css/animate.min.css';
+import '../assets/vendor/bootstrap/css/bootstrap.min.css';
+import '../assets/vendor/bootstrap-icons/bootstrap-icons.css';
+import '../assets/vendor/boxicons/css/boxicons.min.css'
+import '../assets/vendor/glightbox/css/glightbox.min.css';
+import '../assets/vendor/swiper/swiper-bundle.min.css';
+import '../assets/css/style.css';
+
+
+
+import { useState , useEffect} from 'react';
 
 function NavigationBar() {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [isClickedFolds, setIsClickedFolds] = useState(false);
-  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
 
-  function handleClick(e) {
-    setCurrentUrl(e.target.pathname);
-  }
 
-  function handleDropdownToggle() {
-    setIsDropdownVisible(!isDropdownVisible);
-  }
+    const [isNavbarMobile, setIsNavbarMobile] = useState(false);
 
-  return (
-//    <nav>
-//      {/* <img src={icon}/> */}
-//      <h1>Green Journey</h1>
-//      <div>
-//      <ul>
-//        <li>
-//          <a href="/">Home</a>
-//        </li>
-//        <li>
-//          <a href="/footprint">Footprint</a>
-//        </li>
-//
-//
-//
-//
-//        {/* <li>
-//          <a href="/quiz">Quiz</a>
-//        </li>  */}
-//
-//        <li>
-//          <a href="/travel">Travel</a>
-//        </li>
-//
-//         {/* <li>
-//          <a href="/test">Test</a>
-//        </li>  */}
-//
-//        <li className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-//          <a>Information</a>
-//          <ul className={isDropdownVisible ? "visible" : "hidden"}>
-//            <li><a href="/information/state">State Information</a></li>
-//            <li><a href="/information/transport">Transport Information</a></li>
-//          </ul>
-//        </li>
-//      </ul>
-//      </div>
-//
-//      <div id="mobile" onClick = {handleClickFolds}>
-//        <i className={isClickedFolds? "fas fa-times":"fas fa-bars"}></i>
-//      </div>
-//    </nav>
-<div className="Navbar">
-<div className="leftSide">
-  <h1>Green Journey</h1>
-</div>
-<div className="rightSide">
-  <ul>
-    <li>
-      <a
-        href="/"
-        className={currentUrl === "/" ? "active" : ""}
-        onClick={handleClick}
+    const select = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
+    const handleDropdownClick = (e) => {
+      if (isNavbarMobile) {
+        e.preventDefault();
+        const dropdown = e.currentTarget.nextElementSibling;
+        dropdown.classList.toggle('dropdown-active');
+      }
+    };
+
+    function handleMClick(e) {
+        setIsNavbarMobile(!isNavbarMobile);
+        const navbar = document.querySelector('#navbar');
+        navbar.classList.toggle('navbar-mobile');
+        e.target.classList.toggle('bi-list');
+        e.target.classList.toggle('bi-x');
+    }
+    
+      
+    const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+
+    function handleClick(e) {
+        setCurrentUrl(e.target.pathname);
+    }
+
+
+
+    useEffect(() => {
+      const initializeHeader = () => {
+        let selectHeader = select('#header');
+        if (selectHeader) {
+          const headerScrolled = () => {
+            if (window.scrollY > 100) {
+              selectHeader.classList.add('header-scrolled');
+            } else {
+              selectHeader.classList.remove('header-scrolled');
+            }
+          };
+          document.addEventListener('scroll', headerScrolled);
+          headerScrolled();
+        }
+      };
+      initializeHeader();
+    }, []);
+
+    return(
+        <header
+        id="header"
+        className={currentUrl === "/" ?"fixed-top d-flex align-items-center header-transparent" : "fixed-top d-flex align-items-center"}
       >
-        Home
-      </a>
-    </li>
-    <li>
-      <a
-        href="/footprint"
-        className={currentUrl === "/footprint" ? "active" : ""}
-        onClick={handleClick}
-      >
-        Footprint
-      </a>
-    </li>
-    <li>
-      <a
-        href="/travel"
-        className={currentUrl === "/travel" ? "active" : ""}
-        onClick={handleClick}
-      >
-        Travel
-      </a>
-    </li>
+        <div className="container d-flex justify-content-between align-items-center">
+          <div className="logo">
+            <h1 className="text-light">
+              <a href="/">
+                <span>Green Journey</span>
+              </a>
+            </h1>
+            {/* Uncomment below if you prefer to use an image logo */}
+            {/* <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
+          </div>
+          <nav id="navbar" className="navbar">
+            <ul>
+              <li>
+                <a onClick={handleClick} className={currentUrl === "/" ? "active" : ""} href="/">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a onClick={handleClick} className={currentUrl === "/footprint" ? "active" : ""} href="/footprint">Footprint</a>
+              </li>
+              <li>
+                <a onClick={handleClick} className={currentUrl === "/travel" ? "active" : ""} href="/travel">Travel</a>
+              </li>
+              <li>
+                <a onClick={handleClick} className={currentUrl === "/track" ? "active" : ""} href="/track">Track</a>
+              </li>
+              <li>
+                <a onClick={handleClick} className={currentUrl === "/educaiton" ? "active" : ""} href="/educaiton">Education</a>
+              </li>
+              
+              <li className="dropdown">
+                <a href="#" onClick={handleDropdownClick}>
+                  <span>Information</span> <i className="bi bi-chevron-down" />
+                </a>
+                <ul>
+                  <li>
+                    <a  href="/information/state">State Information</a>
+                  </li>
+                  <li>
+                    <a  href="/information/transport">Transport Information</a>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+            <i className="bi bi-list mobile-nav-toggle" onClick={handleMClick}/>
+          </nav>
+          {/* .navbar */}
+        </div>
+      </header>
+      
 
 
-    <li>
-      <a
-        href="/track"
-        className={currentUrl === "/track" ? "active" : ""}
-        onClick={handleClick}
-      >
-        Track
-      </a>
-    </li>
-
-
-    <li>
-      <a
-        href="/education"
-        className={currentUrl === "/education" ? "active" : ""}
-        onClick={handleClick}
-      >
-        Education
-      </a>
-    </li>
-    <li className="dropdown">
-      <a>Information</a>
-      <ul className={isDropdownVisible ? "visible" : "hidden"}>
-        <li>
-          <a href="/information/state">State Information</a>
-        </li>
-        <li>
-          <a href="/information/transport">Transport Information</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <div id="mobile" onClick={() => setIsClickedFolds(!isClickedFolds)}>
-    <i className={isClickedFolds ? "fas fa-times" : "fas fa-bars"}></i>
-  </div>
-</div>
-</div>
     );
 }
 
