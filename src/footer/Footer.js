@@ -27,37 +27,34 @@ export default function Footer() {
             </ul>
             </div>
             <div className="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Our Functions</h4>
             <ul>
                 <li>
-                <i className="bx bx-chevron-right" /> <a href="#">Web Design</a>
+                <i className="bx bx-chevron-right" /> <a href="/footprint">Footprint</a>
                 </li>
                 <li>
                 <i className="bx bx-chevron-right" />{" "}
-                <a href="#">Web Development</a>
+                <a href="/travel">Travel</a>
                 </li>
                 <li>
                 <i className="bx bx-chevron-right" />{" "}
-                <a href="#">Product Management</a>
+                <a href="/track">Track</a>
                 </li>
                 <li>
-                <i className="bx bx-chevron-right" /> <a href="#">Marketing</a>
+                <i className="bx bx-chevron-right" /> <a href="/education">Education</a>
                 </li>
-                <li>
-                <i className="bx bx-chevron-right" />{" "}
-                <a href="#">Graphic Design</a>
-                </li>
+                
             </ul>
             </div>
             <div className="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-                A108 Adam Street <br />
-                New York, NY 535022
+                xxx xxx Street <br />
+                xxx xxx, xx xxxxxx
                 <br />
-                United States <br />
+                Australia <br />
                 <br />
-                <strong>Phone:</strong> +1 5589 55488 55
+                <strong>Phone:</strong> +61 xxxx xxxxxx
                 <br />
                 <strong>Email:</strong> info@example.com
                 <br />
