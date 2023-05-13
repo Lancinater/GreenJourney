@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
 import './App.css';
-import NavigationBar from './NavigationBar/NavigationBar';
+import NavigationBar from './navigationBar/NavigationBar';
 import HomeHero from './homepage/homehero';
 import HomeFeatures from './homepage/homefeatures';
 import AOS from 'aos';
