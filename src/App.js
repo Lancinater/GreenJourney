@@ -11,8 +11,12 @@ import React from 'react';
 import SubHeader from './subheader/Subheader';
 import TrafficAndCarbonEstimator from './trafficAndCarbonEstimator/TrafficAndCarbonEstimator';
 import Weather2 from './recommendationweather/Weather';
-import { Alert } from 'react-bootstrap';
+import Alert from "react-bootstrap/Alert";
 import Record from './record/Record';
+import EducationHomePage1 from './EducationPage/EducationHomePage1';
+import Chart from './pages/Chart';
+import TransportPage from './TransportChart/TransportPage';
+import Description from './description/Description';
 
 function App() {
 
@@ -38,7 +42,9 @@ function App() {
         <Route path="/footprint" element={
           <main id="main">
             <SubHeader name = "Footprint"/>
+            <div className="calbackground">
             <TrafficAndCarbonEstimator/>
+            </div>
           </main>}/>
           
        
@@ -46,16 +52,10 @@ function App() {
         <Route path="/travel" element={
           <main id="main">
             <SubHeader name = "Travel"/>
-            <div className="whole-recommendation">
-        {/* <Alert variant="info" className='centered-alert'>
-           Enter a destination to get travel suggestions. For example, fill in: Monash university caulfield or Monash university clayton.
-        </Alert> */}
+        <div className="whole-recommendation">
+
         <div className="middle-recommendation">
-            {/*<div className="left-component">
-              <OriginMap></OriginMap>
-            </div>*/}
-            <div>
-              {/* <TransportPage></TransportPage> */}
+            <div className="calbackground">              
               <Weather2></Weather2>
             </div>
          </div>
@@ -71,6 +71,7 @@ function App() {
         <Route path="/educaiton" element={
           <main id="main">
             <SubHeader name="Education"/>
+            <EducationHomePage1></EducationHomePage1>
 
           </main>}>
         
@@ -79,6 +80,10 @@ function App() {
         <Route path="/information/state" element={
           <main id="main">
             <SubHeader name = "State Information"/>
+            <div className="calbackground"> 
+            <Chart></Chart>
+            <Description></Description>
+            </div>
           
           </main>}>
         
@@ -87,7 +92,9 @@ function App() {
         <Route path="/information/transport" element={
           <main id="main">
             <SubHeader name = "Transport Information"/>
-          
+            <div className="calbackground"> 
+            <TransportPage></TransportPage>
+            </div>
           </main>}>
         
         </Route>

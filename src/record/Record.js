@@ -51,7 +51,7 @@ const Record = () => {
 
   const calculateDistance = () => {
     if (inputDistance === "" && destination === "") {
-      setError("请输入距离或目的地");
+      setError("Please enter your destination or the distance!");
       return;
     }
 
@@ -77,11 +77,11 @@ const Record = () => {
         if (status === "OK") {
           const destinationAddress = response.destinationAddresses[0];
           if (!destinationAddress) {
-            console.error("Invalid destination. Please try again.");
+            setError("Invalid destination. Please try again.");
           } else {
             const elementStatus = response.rows[0].elements[0].status;
             if (elementStatus === "NOT_FOUND" || elementStatus === "ZERO_RESULTS") {
-              console.error("Invalid destination. Please try again.");
+              setError("Invalid destination. Please try again.");
             } else {
               const distanceResult = response.rows[0].elements[0].distance.value / 1000;
               setDistance(distanceResult);
@@ -89,7 +89,7 @@ const Record = () => {
             }
           }
         } else {
-          console.error("Error:", status);
+          setError("Error: " + status);
         }
       }
     );}}
@@ -203,8 +203,9 @@ const Record = () => {
       Please fill in your destination and departure date, for example, select Monday as the date and go to Monash university caulfield as your destination.
       </Alert>
       <form onSubmit={handleSubmit}>
-        <label>
-          Transportation:
+        
+        <label className="label-text">
+          Transportation: <br />
           <select value={transportation} onChange={handleTransportationChange}>
             <option value="car">Car</option>
             <option value="bus">Bus</option>
@@ -212,8 +213,8 @@ const Record = () => {
           </select>
         </label>
         <br />
-        <label>
-          Day of Week:
+        <label className="label-text">
+          Day of Week:  <br />
           <select value={dayOfWeek} onChange={handleDayOfWeekChange}>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -223,13 +224,13 @@ const Record = () => {
           </select>
         </label>
         <br />
-        <label>
-          Destination:
+        <label className="label-text">
+          Destination:  <br />
           <input type="text" value={destination} onChange={handleDestinationChange} />
         </label>
         <br />
-        <label>
-            Distance (optional):
+        <label className="label-text">
+            Distance:  <br />
             <input
               type="number"
               min="0"
@@ -240,7 +241,9 @@ const Record = () => {
           </label>
           <br />
         <Button type="submit" variant="outline-info" size="lg">Submit it</Button>
-
+        <Button type="button" onClick={handleReset} variant="outline-info" size="lg" style={{ marginLeft: "10px" }}>
+          Reset
+        </Button>
       </form>
       {error && <div style={{ color: "red", marginTop: "10px" }}>{error}</div>}
       {showResults && (
@@ -263,9 +266,7 @@ const Record = () => {
       </tbody>
     </table>
 )}
-        <Button type="button" onClick={handleReset} variant="outline-info" size="lg" style={{ marginLeft: "10px" }}>
-          Reset
-        </Button>
+
       <div id="container" style={{ width: "100%", height: "400px", marginTop: "20px" }}></div>
       </LoadScript>
     </div>

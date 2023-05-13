@@ -1,0 +1,97 @@
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    
+  }
+  
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+
+.edusection  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .eduarticle  {
+    width: 30%;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(38, 5, 5, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .eduarticle :hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  a.eduarticle  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .eduarticle  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px;
+  }
+  
+  .eduarticle  p {
+    font-size: 1rem;
+    margin: 0 20px 20px 20px;
+  }
+  
+  .eduarticle  a {
+    display: block;
+    text-align: center;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .eduarticle  a:hover {
+    background-color: #0052a3;
+    transform: translateY(-3px);
+  }
+  
+  .imageset{ 
+    display: block;
+    margin: auto;
+    max-width: 320px;
+    height: 200px;
+  }
+
+  .education-page {
+    background-image: url('./RdPmVLWqXy.jpg'); /*  './background.jpg' */
+    background-size: cover; /* 图片将覆盖整个元素区域 */
+    background-repeat: no-repeat; /* 图片不重复 */
+    background-position: center center; /* 图片居中 */
+    background-attachment: fixed; /* 图片不随滚动条滚动 */
+    min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
+  }
+
+/* .education-page h1,
+.education-page p,
+.education-page h3 {
+  color: white;
+} */
+

@@ -1,0 +1,108 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .leftSection,
+  .rightSection {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .leftSection h1 {
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    height: auto;
+  width: auto;
+  max-height: 80%;
+  max-width: 80%;
+  object-fit: cover;
+  }
+  
+  .rightSection {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding-left: 300px;
+  }
+  
+  .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 20px;
+    margin-top: auto;
+  }
+  
+  .paragraph {
+    margin-bottom: 20px; /* 根据需要调整值 */
+  }
+
+  .HomePage {
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+
+.arrows {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  position: fixed;   
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+  
+  .icon {
+    font-size: 4rem; 
+    color: rgb(239, 246, 241); 
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+  }
+  
+  .arrows:hover .icon {
+    transform: translateY(10px); /* 根据放大的尺寸调整位移 */
+  }
