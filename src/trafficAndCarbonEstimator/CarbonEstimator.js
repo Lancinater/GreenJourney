@@ -36,11 +36,11 @@ const CarbonEstimator = ({ distance }) => {
   }, [distance]);
 
   const typeValues = {
-    motorbike: 2,
-    bus: 3,
-    transit_rail: 4,
-    large_airplane: 5,
-    small_airplane: 6,
+    motorbike: 80,
+    bus: 75,
+    transit_rail: 60,
+    large_airplane: 90,
+    small_airplane: 145,
   };
 
   const handleTypeChange = (e) => {

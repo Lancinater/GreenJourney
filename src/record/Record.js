@@ -116,13 +116,13 @@ const Record = () => {
     let emissionFactor = 0;
     switch (transportation) {
       case "car":
-        emissionFactor = 10;
+        emissionFactor = 2.50;
         break;
       case "bus":
-        emissionFactor = 20;
+        emissionFactor = 2.00;
         break;
       case "plane":
-        emissionFactor = 100;
+        emissionFactor = 0.200;
         break;
       default:
         break;
@@ -174,7 +174,7 @@ const Record = () => {
       },
       yAxis: {
         title: {
-          text: "Carbon Footprint (g)",
+          text: "Carbon Footprint (kg)",
         },
       },
       series: [
@@ -195,6 +195,27 @@ const Record = () => {
     // Your code to initialize Google Maps goes here
   }, [])
 
+
+  const calculateTotalCarbonFootprint = () => {
+    const totalCarbonFootprint = Object.values(results).reduce((total, { carbonFootprint }) => total + carbonFootprint, 0);
+    return totalCarbonFootprint;
+  };
+  
+  const totalCarbonFootprint = calculateTotalCarbonFootprint();
+  
+  let alertVariant = "success";
+  let alertMessage = "This week's carbon footprint is very low. Keep up the good work!";
+  
+  if (totalCarbonFootprint >= 40 && totalCarbonFootprint <= 100) {
+    alertVariant = "warning";
+    alertMessage = "This week's carbon footprint is within the normal range.";
+  } else if (totalCarbonFootprint > 100) {
+    alertVariant = "danger";
+    alertMessage = "This week's carbon footprint is above the limit.";
+  }
+
+
+
   return (
     <div className="calbackground">
       <LoadScript googleMapsApiKey={apiKey} onLoad={onLoad}>
@@ -207,9 +228,9 @@ const Record = () => {
         <label className="label-text">
           Transportation: <br />
           <select value={transportation} onChange={handleTransportationChange}>
-            <option value="car">Car</option>
-            <option value="bus">Bus</option>
-            <option value="flight">Flight</option>
+            <option value="car">Fuel vehicles</option>
+            <option value="bus">Hybrid vehicles</option>
+            <option value="plane">Electric vehicles</option>
           </select>
         </label>
         <br />
@@ -230,7 +251,7 @@ const Record = () => {
         </label>
         <br />
         <label className="label-text">
-            Distance:  <br />
+            Distance (KM):  <br />
             <input
               type="number"
               min="0"
@@ -252,7 +273,7 @@ const Record = () => {
         <tr>
           <th style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>Day of Week</th>
           <th style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>Distance (km)</th>
-          <th style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>Carbon Footprint (g)</th>
+          <th style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>Carbon Footprint (kg)</th>
         </tr>
       </thead>
       <tbody>
@@ -269,6 +290,7 @@ const Record = () => {
 
       <div id="container" style={{ width: "100%", height: "400px", marginTop: "20px" }}></div>
       </LoadScript>
+      <Alert variant={alertVariant}>{alertMessage}</Alert>
     </div>
   );
 }
