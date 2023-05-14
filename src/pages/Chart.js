@@ -31,6 +31,7 @@ function Chart() {
           .then(data => {
             const filteredAllCityList = data.filter(city => city.cityName !== 'test');
             setCityEmissions(filteredAllCityList)
+            setYears(data.map(cityEmissionsArray => cityEmissionsArray.year));
           })
           .catch(error => console.error(error));
       } else
