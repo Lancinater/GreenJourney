@@ -17,6 +17,8 @@ import EducationHomePage1 from './EducationPage/EducationHomePage1';
 import Chart from './pages/Chart';
 import TransportPage from './TransportChart/TransportPage';
 import Description from './description/Description';
+import Guide from './guide/Guide';
+
 
 function App() {
 
@@ -104,8 +106,12 @@ function App() {
             <SubHeader name = "track"/>
             <Record></Record>
           </main>}>
-        
         </Route>
+        
+        <Route path="*" element={<main id="main">
+            <SubHeader name = "null"/>
+            <Guide></Guide>
+          </main>} />
       </Routes>
       <Footer/>
     </Router>
