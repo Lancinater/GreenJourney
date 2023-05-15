@@ -99,7 +99,7 @@ function NavigationBar() {
                 <a onClick={handleClick} className={currentUrl === "/track" ? "active" : ""} href="/track">Track</a>
               </li>
               <li>
-                <a onClick={handleClick} className={currentUrl === "/educaiton" ? "active" : ""} href="/educaiton">Education</a>
+                <a onClick={handleClick} className={currentUrl === "/education" ? "active" : ""} href="/education">Education</a>
               </li>
               
               <li className="dropdown">

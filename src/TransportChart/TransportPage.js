@@ -22,7 +22,8 @@ const TransportPage = () => {
   // Calculate emissions data for the selected transports
   const data = [
     { name: transport1, emissions: typeValues[transport1] },
-    { name: transport2, emissions: typeValues[transport2] }
+    { name: transport2, emissions: typeValues[transport2] },
+    { name: "Average", emissions:164.7}
   ];
 
   // Define options for the transport selection dropdowns

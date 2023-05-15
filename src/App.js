@@ -18,7 +18,8 @@ import Chart from './pages/Chart';
 import TransportPage from './TransportChart/TransportPage';
 import Description from './description/Description';
 import Guide from './guide/Guide';
-
+import Quiz from './quiz/Quiz';
+import ArticlePage from './EducationPage/ArticlePage';
 
 function App() {
 
@@ -69,15 +70,26 @@ function App() {
       
         </Route>
 
+        <Route path="/education/:id" element = {
+           <main id="main">
+           <SubHeader name="Education"/>
+            <ArticlePage />
+         </main>
+        }></Route>
+          
+      
         
-        <Route path="/educaiton" element={
+        
+        <Route path="/education" element={
           <main id="main">
             <SubHeader name="Education"/>
             <EducationHomePage1></EducationHomePage1>
-
+            <Quiz></Quiz>
           </main>}>
         
         </Route> 
+
+
 
         <Route path="/information/state" element={
           <main id="main">

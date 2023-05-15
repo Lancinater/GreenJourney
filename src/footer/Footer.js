@@ -63,9 +63,7 @@ export default function Footer() {
             <div className="col-lg-3 col-md-6 footer-info">
             <h3>About GreenJourney</h3>
             <p>
-                Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada
-                terra videa magna derita valies darta donna mare fermentum iaculis
-                eu non diam phasellus.
+                Welcome here! This is a free website for you to reduce your carbon emissions.
             </p>
             
             </div>
