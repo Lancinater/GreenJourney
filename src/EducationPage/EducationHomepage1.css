@@ -89,6 +89,20 @@ h1 {
     min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
   }
 
+  .down-arrow {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    color: black;
+  }
+  
+  .down-arrow.hidden {
+    opacity: 0;
+  }
+  
 /* .education-page h1,
 .education-page p,
 .education-page h3 {
