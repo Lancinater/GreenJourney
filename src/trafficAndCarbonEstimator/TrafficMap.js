@@ -9,6 +9,7 @@ import {
 import "./TrafficMap.module.css";
 import Alert from "react-bootstrap/Alert";
 import styles from "./TrafficMap.module.css";
+import Button from 'react-bootstrap/Button';
 
 const mapContainerStyle = {
   width: "100%",
@@ -100,7 +101,9 @@ const TrafficMap = ({ onDistanceChange }) => {
         value={destination}
         onChange={handleDestinationChange}
       />
-      <button onClick={handleCalculateClick}>Calculate Distance</button>
+      <br/>
+      {/* <button onClick={handleCalculateClick}>Calculate Distance</button> */}
+      <Button onClick={handleCalculateClick} variant="success" size="lg" >Calculate Distance</Button>
       {distance && <p>Distance: {distance}</p>}
       {error && <p className="error-message">{error}</p>}
       <LoadScript googleMapsApiKey={apiKey}>

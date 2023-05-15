@@ -28,7 +28,7 @@ function Weather() {
   }, []);
 
   const fetchWeatherData = useCallback(async (latitude, longitude) => {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=88e2ff032ca8b683249ce94aef6dd767`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=88e2ff032ca8b683249ce94aef6dd767`;
     try {
       const response = await axios.get(weatherUrl);
       setData(response.data);
@@ -196,9 +196,9 @@ function Weather() {
       return 'It is currently raining, consider taking a car or public transportation instead of walking.'
     } else if (weather === 'Snow') {
       return 'It is currently snowing, consider taking a car or public transportation instead of walking.'
-    } else if (temp > 85) {
+    } else if (temp > 25) {
       return 'It is currently very hot outside, consider taking a car or public transportation instead of walking.'
-    } else if (temp < 40) {
+    } else if (temp < 20) {
       return 'It is currently very cold outside, consider taking a car or public transportation instead of walking.'
     } else if (distance > 500){
       return 'It is too far away, please consider other transportations.'
@@ -233,7 +233,7 @@ function Weather() {
     <div className="app">
       <h1 className="title">Green Travel Recommendation</h1>
       <div className="recommendationAlert">
-        <Alert variant="primary" className='recommendationAlert'>We will comprehensively consider the factors of distance and weather to recommend reasonable travel methods for you. Please fill in the location eg: Monash university Caulfield.</Alert>
+        <Alert variant="primary" className='recommendationAlert'>We will comprehensively consider the factors of distance and weather to recommend reasonable travel methods for you. Please fill in the location eg: Monash university Caulfield</Alert>
       </div>
       <div className="search">
         <input
@@ -243,8 +243,8 @@ function Weather() {
           placeholder="Enter Location"
           type="text"
         />
-        <Button className="submit" onClick={searchLocationButton} variant="outline-warning">Submit</Button>
-        <Button onClick={reset} variant="outline-warning">
+        <Button className="submit" onClick={searchLocationButton} variant="success">Submit</Button>
+        <Button onClick={reset} variant="warning">
           Reset
         </Button>
       </div>
@@ -263,7 +263,7 @@ function Weather() {
       <div>
         <div className="weatherInfo">
             {data.main ? <p>Destination: {data.name}</p> : null}
-            {data.main ? <p>Weather: {data.main.temp.toFixed()}°F {data.weather[0].main}</p> : null}
+            {data.main ? <p>Weather: {data.main.temp.toFixed()}°C {data.weather[0].main}</p> : null}
         </div>
         {data.main ? <div className="recommendation-blocks">
             <div className="upper-block">

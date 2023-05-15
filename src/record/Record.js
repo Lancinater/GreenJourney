@@ -204,14 +204,17 @@ const Record = () => {
   const totalCarbonFootprint = calculateTotalCarbonFootprint();
   
   let alertVariant = "success";
-  let alertMessage = "This week's carbon footprint is very low. Keep up the good work!";
+  let alertMessage = "Based on the global annual allocated carbon emissions and the global population, the average per capita weekly carbon emissions should be kept within the range of 104 to 156 kilograms of CO2e.This week's carbon footprint is very low. Keep up the good work! You showed personal strength and responsibility and made an important contribution to our planet. At the same time, I hope you will continue to take energy-saving measures, such as turning off unnecessary electrical appliances, using energy-efficient equipment, improving insulation and energy-saving facilities, etc.; in terms of travel, ride a bicycle and use public transportation to reduce personal car use. These modes of transport typically have lower carbon emissions and helping to improve the traffic congestion.";
   
-  if (totalCarbonFootprint >= 40 && totalCarbonFootprint <= 100) {
+  if (totalCarbonFootprint >= 104 && totalCarbonFootprint <= 156) {
     alertVariant = "warning";
-    alertMessage = "This week's carbon footprint is within the normal range.";
-  } else if (totalCarbonFootprint > 100) {
+    alertMessage = "Your weekly per capita carbon emissions are at normal levels! Hope to continue to work hard to contribute to the environmental protection of our planet. At the same time, I hope you will continue to take energy-saving measures, such as turning off unnecessary electrical appliances, using energy-efficient equipment, improving insulation and energy-saving facilities, etc.; in terms of travel, ride a bicycle and use public transportation to reduce personal car use. These modes of transport typically have lower carbon emissions, while also helping to improve air quality and traffic congestion. Reduce waste generation, recover and recycle renewable resources wherever possible. Use reusable shopping bags when shopping, reduce the use of single-use packaging, and implement effective recycling policies at home.";
+    
+    
+  } else if (totalCarbonFootprint > 156) {
     alertVariant = "danger";
-    alertMessage = "This week's carbon footprint is above the limit.";
+    alertMessage = "Your weekly carbon emissions are high, we need to focus on environmental protection and the severity of climate change. Please think hard and take action to reduce your carbon footprint. Here are some suggestions: turn off unnecessary appliances, use energy-efficient appliances, improve insulation and energy-saving facilities, etc.; in terms of travel, use bicycles and use public transport to reduce personal car use. These modes of transport typically have lower carbon emissions, while also helping to improve air quality and traffic congestion. Reduce waste generation, recover and recycle renewable resources wherever possible. Use reusable shopping bags when shopping, reduce the use of single-use packaging, and implement effective recycling policies at home. Learn about environmental protection, understand the current climate situation and the importance of environmental protection, learn how to live green, and encourage others to take environmental protection actions.";
+    
   }
 
 
@@ -291,6 +294,7 @@ const Record = () => {
       <div id="container" style={{ width: "100%", height: "400px", marginTop: "20px" }}></div>
       </LoadScript>
       <Alert variant={alertVariant}>{alertMessage}</Alert>
+      
     </div>
   );
 }
