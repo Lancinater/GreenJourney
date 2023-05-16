@@ -57,7 +57,7 @@ const Record = () => {
 
 
   const handleDestinationChange = (event) => {
-    setDestination(event.target.value * 2);
+    setDestination(event.target.value);
   };
 
 
