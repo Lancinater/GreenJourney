@@ -5,6 +5,7 @@
     margin: 1em auto;
 }
 
+
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
@@ -15,16 +16,19 @@
     max-width: 500px;
 }
 
+
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
     color: #555;
 }
 
+
 .highcharts-data-table th {
     font-weight: 600;
     padding: 0.5em;
 }
+
 
 .highcharts-data-table td,
 .highcharts-data-table th,
@@ -32,17 +36,20 @@
     padding: 0.5em;
 }
 
+
 .highcharts-data-table thead tr,
 .highcharts-data-table tr:nth-child(even) {
     background: #f8f8f8;
 }
 
+
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
 
+
 .calbackground{
-    
+   
     background-image: url('./3ALXjA8W90.jpg'); /*  './background.jpg' */
     background-size: cover; /* 图片将覆盖整个元素区域 */
     background-repeat: no-repeat; /* 图片不重复 */
@@ -50,17 +57,22 @@
     min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
 
 
+
+
   }
+
 
   .form-label {
     display: block;
   }
 
+
   .label-text {
     text-align: center;
     display: block;
-    
+   
   }
+
 
   .carbon-estimator {
     display: flex;
@@ -73,3 +85,62 @@
     background-position: center center; /* 图片居中 */  
     min-height: 100vh; /* 设置 div 的最小高度为视口高度，以确保背景图片覆盖整个页面 */
   }
+
+
+  .result-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+ 
+  .result-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+ 
+  .result-container h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+ 
+  .email-container {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+ 
+  .email-container p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+ 
+  .email-input {
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+ 
+  .email-container button {
+    margin-top: 10px;
+  }
+ 
+  .send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .send-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

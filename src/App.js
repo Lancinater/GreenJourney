@@ -20,6 +20,7 @@ import Description from './description/Description';
 import Guide from './guide/Guide';
 import Quiz from './quiz/Quiz';
 import ArticlePage from './EducationPage/ArticlePage';
+import LookupRecord from './record/LookupRecord';
 
 function App() {
 
@@ -124,6 +125,14 @@ function App() {
             <SubHeader name = "null"/>
             <Guide></Guide>
           </main>} />
+
+          <Route path="/track/previousRecord" element={
+          <main id="main">
+            <SubHeader name = "track"/>
+            <LookupRecord></LookupRecord>
+          </main>}>
+
+        </Route>
       </Routes>
       <Footer/>
     </Router>
