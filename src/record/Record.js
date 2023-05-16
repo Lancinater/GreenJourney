@@ -225,6 +225,7 @@ const Record = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setShowResults(true);
     calculateDistance();
   };
 
