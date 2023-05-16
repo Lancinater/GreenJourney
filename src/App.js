@@ -116,7 +116,7 @@ function App() {
 
         <Route path="/track" element={
           <main id="main">
-            <SubHeader name = "track"/>
+            <SubHeader name = "Track"/>
             <Record></Record>
           </main>}>
         </Route>

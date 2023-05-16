@@ -42,6 +42,7 @@ const TrafficMap = ({ onDistanceChange }) => {
   }, []);
 
   const calculateDistance = (destination) => {
+    setError("");
     if (!destination) {
       setError("Please enter a destination.");
       return;

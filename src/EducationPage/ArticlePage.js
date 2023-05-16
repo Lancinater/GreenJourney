@@ -40,7 +40,7 @@ function ArticlePage() {
       <h1 className='hiarticletitle'>{title}</h1>
       <img src={coverImage} alt={title} className="article-cover-image" />
       <p className='content-show'>{isExpanded ? content : content.slice(0, 500) + "..."}</p>
-      <button className='abutton-forarticle' onClick={toggleExpanded}>{isExpanded ? "Back" : "Read More"}</button>
+      <button className='abutton-forarticle' onClick={toggleExpanded}>{isExpanded ? "Back" : "Drop down"}</button>
       <br></br>
       <a href='/education' className="article-page-link">Go back to Education Home Page</a>
     </div>

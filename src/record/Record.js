@@ -62,6 +62,7 @@ const Record = () => {
 
 
   const calculateDistance = () => {
+    setError("");
     if (inputDistance === "" && destination === "") {
       setError("Please enter your destination or the distance!");
       return;
