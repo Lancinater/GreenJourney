@@ -63,9 +63,7 @@ function App() {
               <Weather2></Weather2>
             </div>
          </div>
-            <Alert variant="info" className='bottom-alert' >
-                Tips:   Are you satisfied with our recommendation results, and want to check more low-carbon travel knowledge?
-            </Alert>
+
          </div>
           </main>}>
       
