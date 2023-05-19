@@ -35,7 +35,7 @@ export default function HomeFeatures() {
             Footprint Calculator
           </h3>
           <p className="fst-italic">
-          This feature is used to calculate the distance between the current position the user is in right now to their desired destination. The distance will then be added into the carbon estimator to calculate the carbon emissions based on the transport to location.
+          Calculate the distance to your destination, then use the distance with transportation information in the carbon estimator to calculate the carbon emissions.
           </p>
           
         </a>
@@ -48,13 +48,7 @@ export default function HomeFeatures() {
         <a href="/education" className="col-md-7 pt-5 order-2 order-md-1">
           <h3>Carbon Emission Information</h3>
           <p className="fst-italic">
-            This feature is used to compare the different types of vehicles and their carbon emission rate on a two bar comparison chart. This includes different sizes of transport from small transport like bikes, to big transport like aeroplanes.
-
-          </p>
-          <p>
-          This feature also display the carbon emission from 1990 to the estimated future of 2036. This is to show the change in carbon emissions in Australia and how bad it will turn out in the future.
-
-
+            Compare different types of vehicles and their carbon emission rate on a two bar comparison chart. See carbon emission from past to the estimated future across different states in Australia.
           </p>
         </a>
       </div>
@@ -67,7 +61,7 @@ export default function HomeFeatures() {
             Travel Recommendation
           </h3>
           <p>
-          This feature is used to give recommendations to the user on the different ways to go to their desired location. The factors that affect the recommendation are the weather, location, time, carbon emission rate and availability of the buses. There will also be a recommendation message beneath it to further notice the user.
+          Get travel recommendations to the desired location. We will consider weather, location, time, carbon emission rate and availability of the buses.
 
           </p>
           
@@ -82,7 +76,7 @@ export default function HomeFeatures() {
             Learning About Carbon Emission
           </h3>
           <p className="fst-italic">
-          This feature is to give the user some knowledge about what carbon emissions are and how it is affecting us. Lastly, it also provides the benefits of reducing carbon emissions in the atmosphere.
+          Learn the benefits of reducing carbon emissions in the atmosphere. Take a quiz to test your knowledge.
 
           </p>
           
@@ -98,7 +92,7 @@ export default function HomeFeatures() {
             Track your daily emissions
           </h3>
           <p className="fst-italic">
-          This feature is for users to save their daily carbon emissions in the working days. It records down the type of transportation used, working days, distance travelled and carbon emissions produced. The recorded data will then be displayed on a graph and on a table for easier visualisation for the users.
+          Track your daily carbon emissions in the working days. The recorded data will be displayed on a graph and on a table for easier visualisation.
           </p>
           
         </a>
