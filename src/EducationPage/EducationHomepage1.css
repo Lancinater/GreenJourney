@@ -80,6 +80,13 @@ h1 {
     height: 200px;
   }
 
+  @media (max-width: 768px) {
+    .imageset {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
   .education-page {
     background-image: url('./RdPmVLWqXy.jpg'); /*  './background.jpg' */
     background-size: cover; /* 图片将覆盖整个元素区域 */

@@ -13,7 +13,7 @@ export default function Footer() {
     <div className="footer-top">
         <div className="container">
         <div className="row">
-            <div className="col-lg-3 col-md-6 footer-links">
+            <div className="col-lg-4 col-md-8 footer-links">
             <h4>Useful Links</h4>
             <ul>
                 <li>
@@ -26,7 +26,7 @@ export default function Footer() {
                 
             </ul>
             </div>
-            <div className="col-lg-3 col-md-6 footer-links">
+            <div className="col-lg-4 col-md-8 footer-links">
             <h4>Our Functions</h4>
             <ul>
                 <li>
@@ -46,21 +46,8 @@ export default function Footer() {
                 
             </ul>
             </div>
-            <div className="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-                xxx xxx Street <br />
-                xxx xxx, xx xxxxxx
-                <br />
-                Australia <br />
-                <br />
-                <strong>Phone:</strong> +61 xxxx xxxxxx
-                <br />
-                <strong>Email:</strong> info@example.com
-                <br />
-            </p>
-            </div>
-            <div className="col-lg-3 col-md-6 footer-info">
+            
+            <div className="col-lg-4 col-md-8 footer-info">
             <h3>About GreenJourney</h3>
             <p>
                 Welcome here! This is a free website for you to reduce your carbon emissions.
