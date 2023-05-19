@@ -45,7 +45,7 @@ function App() {
 
         <Route path="/footprint" element={
           <main id="main">
-            <SubHeader name = "Footprint"/>
+            
             <div className="calbackground">
             <TrafficAndCarbonEstimator/>
             </div>
@@ -55,7 +55,7 @@ function App() {
 
         <Route path="/travel" element={
           <main id="main">
-            <SubHeader name = "Travel"/>
+           
         <div className="whole-recommendation">
 
         <div className="middle-recommendation">
@@ -73,7 +73,7 @@ function App() {
 
         <Route path="/education/:id" element = {
            <main id="main">
-           <SubHeader name="Education"/>
+
             <ArticlePage />
          </main>
         }></Route>
@@ -83,7 +83,7 @@ function App() {
         
         <Route path="/education" element={
           <main id="main">
-            <SubHeader name="Education"/>
+
             <EducationHomePage1></EducationHomePage1>
             <Quiz></Quiz>
           </main>}>
@@ -94,7 +94,7 @@ function App() {
 
         <Route path="/information/state" element={
           <main id="main">
-            <SubHeader name = "State Information"/>
+
             <div className="calbackground"> 
             <Chart></Chart>
             <Description></Description>
@@ -106,7 +106,7 @@ function App() {
 
         <Route path="/information/transport" element={
           <main id="main">
-            <SubHeader name = "Transport Information"/>
+  
             <div className="calbackground"> 
             <TransportPage></TransportPage>
             </div>
@@ -116,19 +116,19 @@ function App() {
 
         <Route path="/track" element={
           <main id="main">
-            <SubHeader name = "Track"/>
+
             <Record></Record>
           </main>}>
         </Route>
         
         <Route path="*" element={<main id="main">
-            <SubHeader name = "null"/>
+
             <Guide></Guide>
           </main>} />
 
           <Route path="/track/previousRecord" element={
           <main id="main">
-            <SubHeader name = "track"/>
+
             <LookupRecord></LookupRecord>
           </main>}>
 
