@@ -20,10 +20,7 @@ export default function HomeFeatures() {
   <section id="123" className="features">
     <div className="container" >
       <div className="section-title">
-        <h2>Features</h2>
-        <p>
-        This is where we give some brief descriptions on the different features our website has to offer.
-        </p>
+        <h2>What you can do</h2>
       </div>
       <div className="row" data-aos="fade-up">
       
