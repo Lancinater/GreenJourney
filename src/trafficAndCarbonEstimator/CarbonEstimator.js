@@ -230,6 +230,7 @@ const CarbonEstimator = ({ distance }) => {
       <div className="results-total">
         {/* <h2>Total: {resultsList.reduce((a, b) => a + b, 0)}</h2> */}
         <h2>Total: {resultOfCal} g co2</h2>
+        <h4>The amount of emission needs approximately {Math.round(resultOfCal/60)} trees to absorb in a day.</h4>
         <Button onClick={handleReset} variant="outline-info" size="lg" >Reset</Button>
       </div>
       <Alert variant="primary" className="alert-margin" >
