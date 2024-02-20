@@ -139,27 +139,27 @@ function Weather() {
         }
 
         // Initialize
-        recommendationBlocks[0] = ["car",carEmission,carTime,"block","recommended"];
-        recommendationBlocks[1] = ["bus",busEmission,busTime,"block","recommended"];
-        recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block","recommended"];
-        recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block","recommended"];
+        recommendationBlocks[0] = ["car",carEmission,carTime,"block","Recommended"];
+        recommendationBlocks[1] = ["bus",busEmission,busTime,"block","Recommended"];
+        recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block","Recommended"];
+        recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block","Recommended"];
 
         // does not recommend any transportations here if distance is too far away.
         const dist = parseInt(distance,10);
         if(dist > 500){
-            recommendationBlocks[0] = ["car",carEmission,carTime,"block-not","too far"];
-            recommendationBlocks[1] = ["bus",busEmission,busTime,"block-not","too far"];
-            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","too far"];
-            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","too far"];
+            recommendationBlocks[0] = ["car",carEmission,carTime,"block-not","Too far"];
+            recommendationBlocks[1] = ["bus",busEmission,busTime,"block-not","Too far"];
+            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","Too far"];
+            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","Too far"];
         }
 
         // does not recommend for walk if distance is bigger than 5km
         // does not recommend for bike if distance is bigger than 10km
         if(dist > 5){
-            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","too far"];
+            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","Too far"];
         }
         if(dist > 10){
-            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","too far"];
+            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","Too far"];
         }
 
         // if current time is not between 7:00 - 22:00, bus is not recommended
@@ -173,15 +173,15 @@ function Weather() {
         var dt2 = new Date(dt.getFullYear(), dt.getMonth(),
                            dt.getDate(),parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
         if(dt <dt1 || dt > dt2){
-            recommendationBlocks[1] = ["bus",busEmission,busTime,"block-not","no bus available"];
+            recommendationBlocks[1] = ["bus",busEmission,busTime,"block-not","No bus available"];
         }
 
         // if it is bad weather, walking and cycling should not be recommended
         const weather = data.weather[0].main;
         const temp = data.main.temp;
         if(weather === 'Rain' || weather === 'Drizzle' || weather === 'Snow' || temp>85 || temp<40){
-            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","bad weather"];
-            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","bad weather"];
+            recommendationBlocks[2] = ["bike",bikeEmission,bikeTime,"block-not","Bad weather"];
+            recommendationBlocks[3] = ["walk",walkEmission,walkTime,"block-not","Bad weather"];
         }
         return recommendationBlocks;
     }
